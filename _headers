@@ -1,2 +1,2 @@
-/something/*
-  Basic-Auth: test:test
+/projects/*
+  Basic-Auth: user1:<%= ENV['user1password']%>
