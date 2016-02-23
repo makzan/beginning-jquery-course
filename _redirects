@@ -1,0 +1,5 @@
+# Simple redirects from one path to another
+/home              /                            301
+/blog/my-post.php  /blog/my-post
+/news              /blog
+/google            https://www.google.com
