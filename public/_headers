@@ -1,2 +1,5 @@
+/_headers
+  Basic-Auth: admin:admin
+  
 /projects/*
   Basic-Auth: test2:test2 user1:<%= ENV['user1password']%>
