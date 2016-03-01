@@ -1,10 +1,12 @@
 
-
+<ul class='card-list'>
 <% blog.articles.sort{|a,b| a.data.cid <=> b.data.cid}.each do |article| %>
-  <h2><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></h2>
-  <!-- use article.summary(250) if you have Nokogiri available to show just
-       the first 250 characters -->
-  <% if !article.data.summary.nil? %>
-    <%= article.data.summary %>
-  <% end %>
+  <li>
+    <p><%= link_to article.title, article %> <!--<span><%= article.date.strftime('%b %e') %></span>-->
+      <% if !article.data.summary.nil? %>
+        —<%= article.data.summary %>
+      <% end %>
+    </p>
+  </li>
 <% end %>
+</ul>

@@ -92,7 +92,9 @@ footer {
   background-position: 0 100%;
 }
 
-#main-content p {
+#main-content p,
+#main-content ul,
+#main-content ol {
   padding-bottom: 1em;
 }
 

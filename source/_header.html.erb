@@ -1,28 +1,2 @@
-<p>Hi <input type='text' id='reader-name' placeholder='there'> (<input type='email' id='reader-email' placeholder='email@example.com'>)!  <small>Please enter your email</small>
-
 <p>Welcome to the <a href='/'>Beginnnig jQuery Course</a>.
 
-
-<script>
-  // Reader’s name
-  if (localStorage['readerName'] !== undefined) {
-    readerName = localStorage['readerName'];
-    $('#reader-name').val(readerName);
-  }
-  var readerName = $('#reader-name').val();
-
-  $('#reader-name').bind('keyup', function(){
-    localStorage['readerName'] = $(this).val();
-  });
-
-   // Reader’s email
-  if (localStorage['readerEmail'] !== undefined) {
-    readerEmail = localStorage['readerEmail'];
-    $('#reader-email').val(readerEmail);
-  }
-  var readerEmail = $('#reader-email').val();
-
-  $('#reader-email').bind('keyup', function(){
-    localStorage['readerEmail'] = $(this).val();
-  });
-</script>

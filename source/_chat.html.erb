@@ -58,6 +58,7 @@
 
 <section class="chat">
   <h2>Chat</h2>
+  <%= partial "profile" %>
   <div class="tabs">
     <ul>
       <li><a href='#global-chat-panel' class='active tab'>Global</a>
@@ -78,6 +79,8 @@
     <trix-editor input='mentor-chat-input' id='mentor-chat-trix' placeholder='Message'></trix-editor>
     <button id='send-mentor-chat'>Send</button>
   </div>
+
+  <small>Chat is in alpha testing. Data will be earsed.</small>
 </section>
 
 <script>
