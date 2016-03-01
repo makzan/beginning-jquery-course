@@ -1,0 +1,69 @@
+<div class="tabs">
+  <ul>
+    <li><a href='#global-chat-panel' class='active tab'>Global Chat</a>
+    <li><a href='#mentor-chat-panel' class='tab'>Chat with Thomas</a>
+  </ul>
+</div>
+<div id="global-chat-panel" class='active tab-panel'>
+  <h2>Global Chat in Class</h2>
+  <div id='global-chat-messages'></div>
+  <input type='text' id='global-chat-input' placeholder='Message'>
+</div>
+<div id="mentor-chat-panel" class='tab-panel'>
+  <h2>1-on-1 Chat with Thomas</h2>
+  <div id='mentor-chat-messages'></div>
+  <input type='text' id='mentor-chat-input' placeholder='Message'>
+</div>
+
+<script>
+
+  // tab control
+  $('a.tab').click(function(){
+    $('.active.tab-panel').hide();
+    $('.active').removeClass('active');
+
+    var href = $(this).attr('href');
+    $(this).addClass('active');
+    $(href).show().addClass('active');
+  });
+
+  // Global Chat
+  var myDataRef = new Firebase('https://teaching.firebaseio.com/jQuery/global-chat/');
+
+  $('#global-chat-input').keypress(function (e) {
+    if (e.keyCode === 13) {
+      var text = $('#global-chat-input').val();
+      myDataRef.push({name: readersName, text: text});
+      $('#global-chat-input').val('');
+    }
+  });
+  myDataRef.on('child_added', function(snapshot) {
+    var message = snapshot.val();
+    displayGlobalChatMessage(message.name, message.text);
+  });
+  function displayGlobalChatMessage(name, text) {
+    $('<div/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#global-chat-messages'));
+    $('#global-chat-messages')[0].scrollTop = $('#global-chat-messages')[0].scrollHeight;
+  };
+
+
+  // Mentor Chat
+  var emailSlug = readerEmail.replace('@','-at-').replace(/\./g,'-dot-');
+  var dataRef = new Firebase('https://teaching.firebaseio.com/jQuery/mentor-chats/' + emailSlug + '/');
+
+  $('#mentor-chat-input').keypress(function (e) {
+    if (e.keyCode === 13) {
+      var text = $('#mentor-chat-input').val();
+      dataRef.push({name: readersName, text: text});
+      $('#mentor-chat-input').val('');
+    }
+  });
+  dataRef.on('child_added', function(snapshot) {
+    var message = snapshot.val();
+    displayMentorChatMessage(message.name, message.text);
+  });
+  function displayMentorChatMessage(name, text) {
+    $('<div/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#mentor-chat-messages'));
+    $('#mentor-chat-messages')[0].scrollTop = $('#mentor-chat-messages')[0].scrollHeight;
+  };
+</script>

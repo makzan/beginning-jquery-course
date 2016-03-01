@@ -1,1 +1,51 @@
 @charset "utf-8";
+
+* {
+  box-sizing: border-box;
+}
+img, video {
+  max-width: 100%;
+}
+p, ol, ul, li {
+  margin: 0;
+  padding: 0;
+}
+ul, ol {
+  list-style-position: inside;
+}
+
+body {
+  background: #efefef;
+  display: -webkit-flex;
+  display: flex;
+  /*margin: auto;*/
+}
+
+.course-page {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  border: 3px solid black;
+  background: white;
+}
+
+.course-page > * {
+  display: inline-block;
+  vertical-align: top;
+  padding: 1em;
+}
+
+header {
+  width: 100%;
+}
+main#main-content {
+  width: 70%;
+}
+aside {
+  width: 20%;
+}
+footer {
+  width: 100%;
+  background: green;
+}
+
