@@ -1,5 +1,10 @@
----
-title: Welcome to jQuery Course
----
 
-Still a testing website.
+
+<% blog.articles.sort{|a,b| a.data.cid <=> b.data.cid}.each do |article| %>
+  <h2><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></h2>
+  <!-- use article.summary(250) if you have Nokogiri available to show just
+       the first 250 characters -->
+  <% if !article.data.summary.nil? %>
+    <%= article.data.summary %>
+  <% end %>
+<% end %>

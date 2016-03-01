@@ -1,19 +1,71 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    
-    <!-- Always force latest IE rendering engine or request Chrome Frame -->
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-    
-    <!-- Use title if it's in the page YAML frontmatter -->
-    <title><%= current_page.data.title || "Beginning jQuery Course" %></title>
-    
-    <%= stylesheet_link_tag "normalize", "all" %>
-    <%= javascript_include_tag  "all" %>
-  </head>
-  
-  <body class="<%= page_classes %>">
+<head>
+  <meta charset="utf-8">
+
+  <!-- Always force latest IE rendering engine or request Chrome Frame -->
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+  <!-- Use title if it's in the page YAML frontmatter -->
+  <title><%= current_page.data.title || "The Middleman" %></title>
+
+  <%= stylesheet_link_tag "normalize", "all" %>
+  <%= javascript_include_tag  "all" %>
+</head>
+
+<body class="<%= page_classes %>">
+
+  <header>
+    <%= partial "header" %>
+  </header>
+
+  <main id='main-content'>
     <%= yield %>
-  </body>
+  </main>
+
+  <aside>
+    <div id='messagesDiv'></div>
+    <input type='text' id='messageInput' placeholder='Message'>
+  </aside>
+
+  <footer>
+    &copy; <%= Time.now.year %>, All rights reserved by <a href='http://makzan.net'>Makzan</a>.
+  </footer>
+
+  <script src='https://code.jquery.com/jquery.min.js'></script>
+  <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+  <script>
+
+    // Reader’s name
+    if (localStorage['readersName'] !== undefined) {
+      readersName = localStorage['readersName'];
+      $('#reader-name').val(readersName);
+    }
+
+    var readersName = $('#reader-name').val();
+
+    $('#reader-name').bind('keyup', function(){
+      localStorage['readersName'] = $(this).val();
+    });
+
+    // Chat
+    var myDataRef = new Firebase('https://teaching.firebaseio.com/jQuery/global-chat/');
+
+    $('#messageInput').keypress(function (e) {
+      if (e.keyCode === 13) {
+        var text = $('#messageInput').val();
+        myDataRef.push({name: readersName, text: text});
+        $('#messageInput').val('');
+      }
+    });
+    myDataRef.on('child_added', function(snapshot) {
+      var message = snapshot.val();
+      displayChatMessage(message.name, message.text);
+    });
+    function displayChatMessage(name, text) {
+      $('<div/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#messagesDiv'));
+      $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
+    };
+  </script>
+</body>
 </html>
