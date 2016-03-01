@@ -8,10 +8,13 @@ tag: annoncement
 Welcome to Beginning jQuery course. I’m Thomas Mak (a.k.a. Makzan).
 
 ## jQuery Course Preparation
+
 You’ll need to have basic HTML and CSS skills to learn jQuery. If you’re new to web design, please read the following link to get started coding basic web page with HTML and CSS.
+
 http://learn.shayhowe.com/html-css/building-your-first-web-page/
 
 ## Setting up development environments
+
 Any operation system works fine with this course. We’ll need a modern browser to test the features. [Chrome](http://google.com/chrome/), [Firefox](https://www.mozilla.org/en-US/firefox/developer/) or Safari on Mac works fine.
 
 Then we need text editor to code our web page. Any code editor works. I prefer BBEdit or Atom. But it’s your choice.

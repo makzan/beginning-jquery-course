@@ -1,19 +1,67 @@
-<div class="tabs">
-  <ul>
-    <li><a href='#global-chat-panel' class='active tab'>Global Chat</a>
-    <li><a href='#mentor-chat-panel' class='tab'>Chat with Thomas</a>
-  </ul>
-</div>
-<div id="global-chat-panel" class='active tab-panel'>
-  <h2>Global Chat in Class</h2>
-  <div id='global-chat-messages'></div>
-  <input type='text' id='global-chat-input' placeholder='Message'>
-</div>
-<div id="mentor-chat-panel" class='tab-panel'>
-  <h2>1-on-1 Chat with Thomas</h2>
-  <div id='mentor-chat-messages'></div>
-  <input type='text' id='mentor-chat-input' placeholder='Message'>
-</div>
+<style>
+  .chat h1,
+  .chat h2,
+  .chat h3 {
+    font-size: 1em;
+  }
+  .tabs ul{
+    list-style: none;
+  }
+  .tabs ul li {
+    display: inline-block;
+    width: 50%;
+  }
+
+  .tabs a {
+    color: rgb(255,204,1);
+    font-weight: bold;
+    text-decoration: none;
+    font-size: .8em;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  .tabs a.active {
+    background: rgb(255,204,1);
+    color: black;
+  }
+
+  .tab-panel {
+    border: 1px solid rgb(255,204,1);
+    display: none;
+    padding: .5em;
+  }
+  .tab-panel.active {
+    display: block;
+  }
+
+  .tab-panel input {
+    max-width: 100%;
+  }
+</style>
+
+<section class="chat">
+  <h2>Chat</h2>
+  <div class="tabs">
+    <ul>
+      <li><a href='#global-chat-panel' class='active tab'>Global</a>
+      <li><a href='#mentor-chat-panel' class='tab'>Thomas</a>
+    </ul>
+  </div>
+  <div id="global-chat-panel" class='active tab-panel'>
+    <h3>Global Chat in Class</h3>
+    <div id='global-chat-messages'></div>
+    <input type='text' id='global-chat-input' placeholder='Message'>
+  </div>
+  <div id="mentor-chat-panel" class='tab-panel'>
+    <h3>1-on-1 Chat</h3>
+    <div id='mentor-chat-messages'></div>
+    <input type='text' id='mentor-chat-input' placeholder='Message'>
+  </div>
+</section>
 
 <script>
 
@@ -33,7 +81,7 @@
   $('#global-chat-input').keypress(function (e) {
     if (e.keyCode === 13) {
       var text = $('#global-chat-input').val();
-      myDataRef.push({name: readersName, text: text});
+      myDataRef.push({name: readerName, text: text});
       $('#global-chat-input').val('');
     }
   });
@@ -54,7 +102,7 @@
   $('#mentor-chat-input').keypress(function (e) {
     if (e.keyCode === 13) {
       var text = $('#mentor-chat-input').val();
-      dataRef.push({name: readersName, text: text});
+      dataRef.push({name: readerName, text: text});
       $('#mentor-chat-input').val('');
     }
   });
