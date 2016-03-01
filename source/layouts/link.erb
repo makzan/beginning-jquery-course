@@ -1,0 +1,9 @@
+<% wrap_layout :blog do %>
+  <p><%= link_to current_page.data.title, current_page.data.link %>
+
+  <p><%= current_page.data.summary %>
+
+  <%= yield %>
+
+  <p><small><%= link_to current_page.data.link, current_page.data.link %></small>
+<% end %>
