@@ -14,32 +14,32 @@ We will need some CSS skills to layout elements and set basic styles. But CSS is
 ## Basic HTML and CSS
 You can learn basic HTML and CSS technique in this website:
 
-http://learn.shayhowe.com/html-css/building-your-first-web-page/
+[Building your first web page by Shayhowe](http://learn.shayhowe.com/html-css/building-your-first-web-page/)
 
 ## CSS Layout
 Usually we need to layout elements in the web page. This is done by CSS. The following website shows you several common techniques we use layout elements.
-http://learnlayout.com
+
+[LearnLayout.com](http://learnlayout.com)
 
 ## JavaScript basics
 The following link helps you get started writing JavaScript and it also covers basic usage of jQuery.
 
-http://learn.shayhowe.com/advanced-html-css/jquery/
+[jQuery by Shayhowe](http://learn.shayhowe.com/advanced-html-css/jquery/)
 
 ## The Official jQuery Guide
 
 After going through the links, you may want to learn more by visiting the following official jQuery guide.
 
-http://learn.jquery.com/using-jquery-core/
+[Using jQuery Core](http://learn.jquery.com/using-jquery-core/)
 
 
 ## Code examples
+
 Here are some basic jQuery examples.
-- Click event handling: _
-http://codepen.io/makzan/pen/rarxqj_
-- Fade in: _
-http://codepen.io/makzan/pen/ByPKJj_
-- Fade in with 3 seconds delay: _
-http://codepen.io/makzan/pen/EapKoR_
+
+- [Click event handling](http://codepen.io/makzan/pen/rarxqj)
+- [Fade in](http://codepen.io/makzan/pen/ByPKJj)
+- [Fade in with 3 seconds delay](http://codepen.io/makzan/pen/EapKoR)
 
 ## Summary
 After going through the links and code examples in this lecture, you should be able to code a basic HTML web page with CSS layout. _

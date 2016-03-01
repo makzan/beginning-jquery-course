@@ -41,6 +41,19 @@
   .tab-panel input {
     max-width: 100%;
   }
+
+  /* Trix */
+  trix-editor {
+    border: 1px solid #ccc;
+    font-size: .8em;
+  }
+  trix-toolbar button {
+    display: none;
+  }
+  trix-toolbar button.code,
+  trix-toolbar button.bold {
+    display: block;
+  }
 </style>
 
 <section class="chat">
@@ -52,14 +65,18 @@
     </ul>
   </div>
   <div id="global-chat-panel" class='active tab-panel'>
-    <h3>Global Chat in Class</h3>
+    <h3>Global chat in class</h3>
     <div id='global-chat-messages'></div>
-    <input type='text' id='global-chat-input' placeholder='Message'>
+    <input type='hidden' id='global-chat-input'>
+    <trix-editor input='global-chat-input' id='global-chat-trix' placeholder='Message'></trix-editor>
+    <button id='send-global-chat'>Send</button>
   </div>
   <div id="mentor-chat-panel" class='tab-panel'>
     <h3>1-on-1 Chat</h3>
     <div id='mentor-chat-messages'></div>
-    <input type='text' id='mentor-chat-input' placeholder='Message'>
+    <input type='text' id='mentor-chat-input'>
+    <trix-editor input='mentor-chat-input' id='mentor-chat-trix' placeholder='Message'></trix-editor>
+    <button id='send-mentor-chat'>Send</button>
   </div>
 </section>
 
@@ -73,24 +90,27 @@
     var href = $(this).attr('href');
     $(this).addClass('active');
     $(href).show().addClass('active');
+
+    return false;
   });
 
   // Global Chat
   var myDataRef = new Firebase('https://teaching.firebaseio.com/jQuery/global-chat/');
 
-  $('#global-chat-input').keypress(function (e) {
-    if (e.keyCode === 13) {
-      var text = $('#global-chat-input').val();
-      myDataRef.push({name: readerName, text: text});
-      $('#global-chat-input').val('');
-    }
+  $('#send-global-chat').click(function(){
+    var text = $('#global-chat-input').val();
+    myDataRef.push({name: readerName, text: text});
+
+    var element = $('#global-chat-trix')[0];
+    element.editor.setSelectedRange([0, 99999]);
+    element.editor.deleteInDirection("forward");
   });
   myDataRef.on('child_added', function(snapshot) {
     var message = snapshot.val();
     displayGlobalChatMessage(message.name, message.text);
   });
   function displayGlobalChatMessage(name, text) {
-    $('<div/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#global-chat-messages'));
+    $('<div/>').html(text).prepend($('<em/>').text(name+': ')).appendTo($('#global-chat-messages'));
     $('#global-chat-messages')[0].scrollTop = $('#global-chat-messages')[0].scrollHeight;
   };
 
@@ -99,19 +119,20 @@
   var emailSlug = readerEmail.replace('@','-at-').replace(/\./g,'-dot-');
   var dataRef = new Firebase('https://teaching.firebaseio.com/jQuery/mentor-chats/' + emailSlug + '/');
 
-  $('#mentor-chat-input').keypress(function (e) {
-    if (e.keyCode === 13) {
-      var text = $('#mentor-chat-input').val();
-      dataRef.push({name: readerName, text: text});
-      $('#mentor-chat-input').val('');
-    }
+  $('#send-mentor-chat').click(function(){
+    var text = $('#mentor-chat-input').val();
+    dataRef.push({name: readerName, text: text});
+
+    var element = $('#mentor-chat-trix')[0];
+    element.editor.setSelectedRange([0, 99999]);
+    element.editor.deleteInDirection("forward");
   });
   dataRef.on('child_added', function(snapshot) {
     var message = snapshot.val();
     displayMentorChatMessage(message.name, message.text);
   });
   function displayMentorChatMessage(name, text) {
-    $('<div/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#mentor-chat-messages'));
+    $('<div/>').html(text).prepend($('<em/>').text(name+': ')).appendTo($('#mentor-chat-messages'));
     $('#mentor-chat-messages')[0].scrollTop = $('#mentor-chat-messages')[0].scrollHeight;
   };
 </script>

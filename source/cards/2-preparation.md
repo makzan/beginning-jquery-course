@@ -2,7 +2,7 @@
 cid: 2
 date: 2016-03-01
 title: Preparating for the course
-tag: annoncement
+tag: lecture
 ---
 
 Welcome to Beginning jQuery course. I’m Thomas Mak (a.k.a. Makzan).
@@ -11,7 +11,7 @@ Welcome to Beginning jQuery course. I’m Thomas Mak (a.k.a. Makzan).
 
 You’ll need to have basic HTML and CSS skills to learn jQuery. If you’re new to web design, please read the following link to get started coding basic web page with HTML and CSS.
 
-http://learn.shayhowe.com/html-css/building-your-first-web-page/
+[Building your first web page by Shayhowe](http://learn.shayhowe.com/html-css/building-your-first-web-page/)
 
 ## Setting up development environments
 
