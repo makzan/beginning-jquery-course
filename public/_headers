@@ -1,5 +1,5 @@
 /_headers
-  Basic-Auth: admin:makzan
+  Basic-Auth: admin:makzan123
 
 /admin/*
-  Basic-Auth: admin:makzan
+  Basic-Auth: admin:makzan123
