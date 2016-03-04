@@ -75,7 +75,7 @@
   <div id="mentor-chat-panel" class='tab-panel'>
     <h3>1-on-1 Chat</h3>
     <div id='mentor-chat-messages'></div>
-    <input type='text' id='mentor-chat-input'>
+    <input type='hidden' id='mentor-chat-input'>
     <trix-editor input='mentor-chat-input' id='mentor-chat-trix' placeholder='Message'></trix-editor>
     <button id='send-mentor-chat'>Send</button>
   </div>
@@ -100,9 +100,16 @@
   // Global Chat
   var myDataRef = new Firebase('https://teaching.firebaseio.com/jQuery/global-chat/');
 
+
   $('#send-global-chat').click(function(){
+
+    if (readerEmail.length === 0 || readerName.length === 0) {
+      alert("Please enter your name and email before posting message.");
+      return false;
+    }
+
     var text = $('#global-chat-input').val();
-    myDataRef.push({name: readerName, text: text});
+    myDataRef.push({name: readerName, email: readerEmail, text: text});
 
     var element = $('#global-chat-trix')[0];
     element.editor.setSelectedRange([0, 99999]);
@@ -119,23 +126,40 @@
 
 
   // Mentor Chat
-  var emailSlug = readerEmail.replace('@','-at-').replace(/\./g,'-dot-');
-  var dataRef = new Firebase('https://teaching.firebaseio.com/jQuery/mentor-chats/' + emailSlug + '/');
+  if (readerEmail.length > 0) {
+    var emailSlug = readerEmail.replace('@','-at-').replace(/\./g,'-dot-');
+    var dataRef = new Firebase('https://teaching.firebaseio.com/jQuery/mentor-chats/' + emailSlug + '/chat/');
 
-  $('#send-mentor-chat').click(function(){
-    var text = $('#mentor-chat-input').val();
-    dataRef.push({name: readerName, text: text});
+    var hasNewRef = new Firebase('https://teaching.firebaseio.com/jQuery/mentor-chats/' + emailSlug + '/has-new-chat');
 
-    var element = $('#mentor-chat-trix')[0];
-    element.editor.setSelectedRange([0, 99999]);
-    element.editor.deleteInDirection("forward");
-  });
-  dataRef.on('child_added', function(snapshot) {
-    var message = snapshot.val();
-    displayMentorChatMessage(message.name, message.text);
-  });
-  function displayMentorChatMessage(name, text) {
-    $('<div/>').html(text).prepend($('<em/>').text(name+': ')).appendTo($('#mentor-chat-messages'));
-    $('#mentor-chat-messages')[0].scrollTop = $('#mentor-chat-messages')[0].scrollHeight;
-  };
+    $('#send-mentor-chat').click(function(){
+
+      if (readerEmail.length === 0 || readerName.length === 0) {
+        alert("Please enter your name and email before posting message.");
+        return false;
+      }
+
+      var text = $('#mentor-chat-input').val();
+      dataRef.push({name: readerName, text: text});
+
+      var element = $('#mentor-chat-trix')[0];
+      element.editor.setSelectedRange([0, 99999]);
+      element.editor.deleteInDirection("forward");
+    });
+    dataRef.on('child_added', function(snapshot) {
+      var message = snapshot.val();
+      displayMentorChatMessage(message.name, message.text);
+
+      if (message.is_mentor === true) {
+        hasNewRef.set(false);
+      } else {
+        hasNewRef.set(true);
+      }
+    });
+    function displayMentorChatMessage(name, text) {
+      $('<div/>').html(text).prepend($('<em/>').text(name+': ')).appendTo($('#mentor-chat-messages'));
+      $('#mentor-chat-messages')[0].scrollTop = $('#mentor-chat-messages')[0].scrollHeight;
+    };
+
+  }
 </script>

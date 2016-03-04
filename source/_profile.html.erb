@@ -1,5 +1,5 @@
 <p>
-  Your name: <input type='text' id='reader-name' placeholder='there'><br>
+  Your name: <input type='text' id='reader-name' placeholder=''><br>
   Email: <input type='email' id='reader-email' placeholder='email@example.com'>
 </p>
 
@@ -14,6 +14,7 @@
 
   $('#reader-name').bind('keyup', function(){
     localStorage['readerName'] = $(this).val();
+    readerName = $(this).val();
   });
 
    // Reader’s email
@@ -25,5 +26,6 @@
 
   $('#reader-email').bind('keyup', function(){
     localStorage['readerEmail'] = $(this).val();
+    readerEmail = $(this).val();
   });
 </script>
