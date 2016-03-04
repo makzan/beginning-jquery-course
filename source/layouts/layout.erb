@@ -37,13 +37,7 @@
     <%= partial "header" %>
   </header>
 
-  <main id='main-content'>
-    <%= yield %>
-  </main>
-
-  <aside>
-    <%= partial "chat" %>
-  </aside>
+  <%= yield %>
 
   <footer>
     &copy; <%= Time.now.year %>, All rights reserved by <a href='http://makzan.net'>Makzan</a>.

@@ -67,7 +67,7 @@
 </style>
 
 <section class="chat">
-  <h2>Chat</h2>
+  <h2><a href='/chat.html'>Chat</a></h2>
   <%= partial "profile" %>
   <div class="tabs">
     <ul>
@@ -142,6 +142,8 @@
 
     var hasNewRef = new Firebase('https://teaching.firebaseio.com/jQuery/mentor-chats/' + emailSlug + '/has-new-chat');
 
+    var newChatNotificationRef = new Firebase('https://teaching.firebaseio.com/jQuery/has-new-chats/' + emailSlug + '/');
+
     $('#send-mentor-chat').click(function(){
 
       if (readerEmail.length === 0 || readerName.length === 0) {
@@ -162,8 +164,10 @@
 
       if (message.is_mentor === true) {
         hasNewRef.set(false);
+        newChatNotificationRef.remove();
       } else {
         hasNewRef.set(true);
+        newChatNotificationRef.set(true);
       }
     });
     function displayMentorChatMessage(name, text) {

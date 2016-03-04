@@ -1,0 +1,63 @@
+<h1>Mentor Area</h1>
+
+<p>Chat Key: <input type='text' id='chat-key' style='width:100%'></p>
+
+<div id="mentor-chat-panel" class='tab-panel'>
+  <h3>1-on-1 private chat</h3>
+  <div id='mentor-chat-messages'></div>
+  <input type='hidden' id='mentor-chat-input'>
+  <trix-editor input='mentor-chat-input' id='mentor-chat-trix' placeholder='Message'></trix-editor>
+  <button id='send-mentor-chat'>Send</button>
+</div>
+
+<script>
+
+// chat key
+$('#chat-key').change(function(){
+  var chatKey = $(this).val().replace('https://teaching.firebaseio.com/jQuery/mentor-chats/', '');
+  $(this).val(chatKey);
+
+  $('#mentor-chat-messages').empty();
+  loadChat(chatKey);
+});
+
+var mentorChatDataRef, hasNewRef, newChatNotificationRef;
+
+function loadChat(chatKey){
+  mentorChatDataRef = new Firebase('https://teaching.firebaseio.com/jQuery/mentor-chats/' + chatKey + '/chat/');
+  hasNewRef = new Firebase('https://teaching.firebaseio.com/jQuery/mentor-chats/' + chatKey + '/has-new-chat');
+
+  newChatNotificationRef = new Firebase('https://teaching.firebaseio.com/jQuery/has-new-chats/' + chatKey + '/');
+
+  mentorChatDataRef.on('child_added', handleMentorChatChildAdded);
+}
+
+$('#send-mentor-chat').click(function(){
+
+  var text = $('#mentor-chat-input').val();
+  mentorChatDataRef.push({name: "Thomas Mak", text: text, is_mentor:true});
+
+  var element = $('#mentor-chat-trix')[0];
+  element.editor.setSelectedRange([0, 99999]);
+  element.editor.deleteInDirection("forward");
+});
+
+function handleMentorChatChildAdded(snapshot) {
+  var message = snapshot.val();
+  displayMentorChatMessage(message.name, message.text);
+
+  if (message.is_mentor === true) {
+    hasNewRef.set(false);
+    newChatNotificationRef.remove();
+  } else {
+    hasNewRef.set(true);
+    newChatNotificationRef.set(true);
+  }
+}
+function displayMentorChatMessage(name, text) {
+  $('<div/>').addClass('chat-message').html(text).prepend($('<em/>').text(name+': ')).appendTo($('#mentor-chat-messages'));
+  $('#mentor-chat-messages')[0].scrollTop = $('#mentor-chat-messages')[0].scrollHeight;
+};
+
+
+</script>
