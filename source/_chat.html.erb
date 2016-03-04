@@ -54,6 +54,16 @@
   trix-toolbar button.bold {
     display: block;
   }
+
+
+  .chat-message {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+  }
 </style>
 
 <section class="chat">
@@ -73,7 +83,7 @@
     <button id='send-global-chat'>Send</button>
   </div>
   <div id="mentor-chat-panel" class='tab-panel'>
-    <h3>1-on-1 Chat</h3>
+    <h3>1-on-1 private chat</h3>
     <div id='mentor-chat-messages'></div>
     <input type='hidden' id='mentor-chat-input'>
     <trix-editor input='mentor-chat-input' id='mentor-chat-trix' placeholder='Message'></trix-editor>
@@ -120,7 +130,7 @@
     displayGlobalChatMessage(message.name, message.text);
   });
   function displayGlobalChatMessage(name, text) {
-    $('<div/>').html(text).prepend($('<em/>').text(name+': ')).appendTo($('#global-chat-messages'));
+    $('<div/>').addClass('chat-message').html(text).prepend($('<em/>').text(name+': ')).appendTo($('#global-chat-messages'));
     $('#global-chat-messages')[0].scrollTop = $('#global-chat-messages')[0].scrollHeight;
   };
 
@@ -157,7 +167,7 @@
       }
     });
     function displayMentorChatMessage(name, text) {
-      $('<div/>').html(text).prepend($('<em/>').text(name+': ')).appendTo($('#mentor-chat-messages'));
+      $('<div/>').addClass('chat-message').html(text).prepend($('<em/>').text(name+': ')).appendTo($('#mentor-chat-messages'));
       $('#mentor-chat-messages')[0].scrollTop = $('#mentor-chat-messages')[0].scrollHeight;
     };
 
