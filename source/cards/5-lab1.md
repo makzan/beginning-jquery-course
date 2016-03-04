@@ -75,7 +75,7 @@ tag: lab
 <p><a href="http://colours.neilorangepeel.com/">http://colours.neilorangepeel.com/</a>
 </p>
 <h2>Submitting your exercises</h2>
-<p>Once you have worked on the exercises, you can reply this email to send me the links of your work. Usually there are plenty of questions when working on the code. You can ask me any questions via email too.
+<p>Once you have worked on the exercises, you can send me the links of your work in the chat area, globally or privately. Usually there are plenty of questions when working on the code. You can ask me any questions via the 1-on-1 chat too.
 </p>
 
 <img src="http://mak.la/signature" width="121" height="54" style="width: 121px; height: 54px;"><br>
