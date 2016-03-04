@@ -152,6 +152,8 @@
       var text = $('#mentor-chat-input').val();
       dataRef.push({name: readerName, text: text});
 
+      console.log(dataRef);
+
       var element = $('#mentor-chat-trix')[0];
       element.editor.setSelectedRange([0, 99999]);
       element.editor.deleteInDirection("forward");
