@@ -108,7 +108,7 @@
   });
 
   // Global Chat
-  var myDataRef = new Firebase('https://teaching.firebaseio.com/jQuery/global-chat/');
+  var globalChatDataRef = new Firebase('https://teaching.firebaseio.com/jQuery/global-chat/');
 
 
   $('#send-global-chat').click(function(){
@@ -119,13 +119,13 @@
     }
 
     var text = $('#global-chat-input').val();
-    myDataRef.push({name: readerName, email: readerEmail, text: text});
+    globalChatDataRef.push({name: readerName, email: readerEmail, text: text});
 
     var element = $('#global-chat-trix')[0];
     element.editor.setSelectedRange([0, 99999]);
     element.editor.deleteInDirection("forward");
   });
-  myDataRef.on('child_added', function(snapshot) {
+  globalChatDataRef.on('child_added', function(snapshot) {
     var message = snapshot.val();
     displayGlobalChatMessage(message.name, message.text);
   });
@@ -138,7 +138,7 @@
   // Mentor Chat
   if (readerEmail.length > 0) {
     var emailSlug = readerEmail.replace('@','-at-').replace(/\./g,'-dot-');
-    var dataRef = new Firebase('https://teaching.firebaseio.com/jQuery/mentor-chats/' + emailSlug + '/chat/');
+    var mentorChatDataRef = new Firebase('https://teaching.firebaseio.com/jQuery/mentor-chats/' + emailSlug + '/chat/');
 
     var hasNewRef = new Firebase('https://teaching.firebaseio.com/jQuery/mentor-chats/' + emailSlug + '/has-new-chat');
 
@@ -150,15 +150,13 @@
       }
 
       var text = $('#mentor-chat-input').val();
-      dataRef.push({name: readerName, text: text});
-
-      console.log(dataRef);
+      mentorChatDataRef.push({name: readerName, text: text});
 
       var element = $('#mentor-chat-trix')[0];
       element.editor.setSelectedRange([0, 99999]);
       element.editor.deleteInDirection("forward");
     });
-    dataRef.on('child_added', function(snapshot) {
+    mentorChatDataRef.on('child_added', function(snapshot) {
       var message = snapshot.val();
       displayMentorChatMessage(message.name, message.text);
 

@@ -9,7 +9,7 @@
   if (readerEmail !== "" && readerEmail !== undefined) {
     var emailSlug = readerEmail.replace('@','-at-').replace(/\./g,'-dot-');
     var cid = $('article#post').data('cid') * 1;
-    var dataRef = new Firebase('https://teaching.firebaseio.com/jQuery/readers/' + emailSlug + '/completed/' + cid);
-    dataRef.set(true);
+    var completedDataRef = new Firebase('https://teaching.firebaseio.com/jQuery/readers/' + emailSlug + '/completed/' + cid);
+    completedDataRef.set(true);
   }
 </script>
