@@ -126,7 +126,7 @@
   });
 
   // Global Chat
-  var globalChatDataRef = new Firebase('https://teaching.firebaseio.com/jQuery/global-chat/');
+  var globalChatDataRef = new Firebase('https://teaching.firebaseio.com/' + global.courseKey + '/global-chat/');
 
 
   $('#send-global-chat').click(function(){
@@ -167,7 +167,7 @@
       }
     });
 
-    var originalNewChatNotificationRef = new Firebase(global.fburl + 'jQuery/has-new-chats/' + emailSlug + '/');
+    var originalNewChatNotificationRef = new Firebase(global.fburl + global.courseKey + '/has-new-chats/' + emailSlug + '/');
     var newChatNotificationRef = new Firebase(global.fburl + 'has-new-chats/' + user.uid + '/');
 
     // if exists original data

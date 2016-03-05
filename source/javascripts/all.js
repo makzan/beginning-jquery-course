@@ -2,7 +2,8 @@
 
 
 var global = {
-  fburl: 'https://teaching.firebaseio.com/'
+  fburl: 'https://teaching.firebaseio.com/',
+  courseKey: 'YouthSkills'
 };
 
 
