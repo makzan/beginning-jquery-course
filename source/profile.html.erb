@@ -1,0 +1,62 @@
+<style>
+  .profile-pic img {
+    border-radius: 50%;
+  }
+</style>
+
+<div class="login">
+  <p>Email:<br>
+  <input type='email' id='email'>
+  </p>
+
+  <p>
+  Password:<br>
+  <input type='password' id='password'>
+  </p>
+
+  <p><input type='submit' id='login-button' value='login'></p>
+</div>
+
+<div class="profile">
+  <figure class='profile-pic'>
+    <img>
+  </figure>
+  <p>You’re logged in as <span class='email'></span>.</p>
+  <p><a href='#logout'>Logout</a></p>
+</div>
+
+<script>
+
+
+  if (user !== null) {
+    $('.login').hide();
+    $('.profile').show();
+    $('.profile').find('.email').text(user.password.email);
+    $('.profile').find('.profile-pic').find('img').attr('src', user.password.profileImageURL);
+  } else {
+    $('.profile').hide();
+  }
+
+  // logout
+  $('[href="#logout"]').click(function(){
+    authRef.unauth();
+    location.reload();
+    return false;
+  });
+
+  // login
+  $('#login-button').click(function(){
+    authRef.authWithPassword({
+      "email": $('#email').val(),
+      "password": $('#password').val()
+    }, function(error, authData) {
+      if (error) {
+        console.log("Login Failed!", error);
+        $('#error-message').text("Login Failed: " + error);
+      } else {
+        console.log("Authenticated successfully with payload:", authData);
+        location.reload();
+      }
+    });
+  });
+</script>
