@@ -130,7 +130,7 @@
     displayGlobalChatMessage(message.name, message.text);
   });
   function displayGlobalChatMessage(name, text) {
-    $('<div/>').addClass('chat-message').html(text).prepend($('<em/>').text(name+': ')).appendTo($('#global-chat-messages'));
+    $('<div/>').addClass('chat-message').html(text).prepend($('<em/>').text(name+': ')).appendTo($('#global-chat-messages')).autolink();
     $('#global-chat-messages')[0].scrollTop = $('#global-chat-messages')[0].scrollHeight;
   };
 
@@ -164,14 +164,14 @@
 
       if (message.is_mentor === true) {
         hasNewRef.set(false);
-        newChatNotificationRef.remove();
+        newChatNotificationRef.set(false);
       } else {
         hasNewRef.set(true);
         newChatNotificationRef.set(true);
       }
     });
     function displayMentorChatMessage(name, text) {
-      $('<div/>').addClass('chat-message').html(text).prepend($('<em/>').text(name+': ')).appendTo($('#mentor-chat-messages'));
+      $('<div/>').addClass('chat-message').html(text).prepend($('<em/>').text(name+': ')).appendTo($('#mentor-chat-messages')).autolink();
       $('#mentor-chat-messages')[0].scrollTop = $('#mentor-chat-messages')[0].scrollHeight;
     };
 

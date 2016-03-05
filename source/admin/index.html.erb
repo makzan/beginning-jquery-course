@@ -1,5 +1,10 @@
 <h1>Mentor Area</h1>
 
+<ul id='all-chats'>
+
+</ul>
+<li class='template all-chat-li'><span class='has-new'>🌱</span><a class='chat-key'></a></li>
+
 <p>Chat Key: <input type='text' id='chat-key' style='width:100%'></p>
 
 <div id="mentor-chat-panel" class='tab-panel'>
@@ -11,6 +16,37 @@
 </div>
 
 <script>
+
+// all chat
+var allChatRef = new Firebase('https://teaching.firebaseio.com/jQuery/has-new-chats/');
+allChatRef.on('value', renderAllChat);
+function renderAllChat(snapshot) {
+  $('#all-chats').empty();
+
+  var data = snapshot.val();
+  for (var chatKey in data) {
+    var isNew = data[chatKey];
+
+    var clone = $('.template.all-chat-li').clone();
+    clone.removeClass('template');
+    if (!isNew) {
+      clone.find('.has-new').hide();
+    }
+    clone.find('.chat-key').attr('href','#'+chatKey).attr('data-chatkey', chatKey).text(chatKey);
+    $('#all-chats').append(clone);
+  }
+}
+
+// click
+$('#all-chats').delegate('a.chat-key', 'click', function(){
+  console.log($(this).data('chatkey'));
+  $('#chat-key').val($(this).data('chatkey'));
+  $('#chat-key').change();
+  return false;
+});
+
+
+
 
 // chat key
 $('#chat-key').change(function(){
@@ -48,14 +84,14 @@ function handleMentorChatChildAdded(snapshot) {
 
   if (message.is_mentor === true) {
     hasNewRef.set(false);
-    newChatNotificationRef.remove();
+    newChatNotificationRef.set(false);
   } else {
     hasNewRef.set(true);
     newChatNotificationRef.set(true);
   }
 }
 function displayMentorChatMessage(name, text) {
-  $('<div/>').addClass('chat-message').html(text).prepend($('<em/>').text(name+': ')).appendTo($('#mentor-chat-messages'));
+  $('<div/>').addClass('chat-message').html(text).prepend($('<em/>').text(name+': ')).appendTo($('#mentor-chat-messages')).autolink();
   $('#mentor-chat-messages')[0].scrollTop = $('#mentor-chat-messages')[0].scrollHeight;
 };
 
