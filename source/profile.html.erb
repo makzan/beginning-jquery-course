@@ -134,7 +134,7 @@
     }, function(error, authData) {
       if (error) {
         console.log("Login Failed!", error);
-        $('#error-message').text("Login Failed: " + error);
+        alert("Login Failed: " + error);
       } else {
         console.log("Authenticated successfully with payload:", authData);
         location.reload();
