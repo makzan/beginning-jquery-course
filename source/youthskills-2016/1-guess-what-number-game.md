@@ -7,8 +7,6 @@ tags: jQuery, beginner, exercise
 
 # Exercise 1—Guess-what-number Game with jQuery
 
-tags: jQuery, beginner, exercise
-
 In this exercise, we create a guess-what-number game. The following steps list the requirement of the game.
 
 1. The computer generated a random number between 1 and 100.
@@ -25,7 +23,13 @@ In this exercise, we create a guess-what-number game. The following steps list t
 	3. Messages for larger or smaller number
 	4. Congratulations message.
 	5. “Restart Game” button.
-3. Use jQuery to hide
+3. Use jQuery to hide non-current elements.
+4. Define a function to generate a random number, and store it as variable.
+5. Handle click event on the “Guess” button.
+6. Determine if the input number is <=> with the generated number.
+7. Show the message of the comparing result.
+8. Show Congratulations wording (and the “Restart” button) if player is correct.
+9. Restart the game on “Restart” button click.
 
 ## What you need to know to make the game
 
@@ -39,16 +43,38 @@ In this exercise, we create a guess-what-number game. The following steps list t
 
 In the pen _setting \> Javascript tab \> Quick Add \> jQuery_.
 
-**Basic jQuery**
-
 **[jQuery reference](http://api.jquery.com)**
 
-jQuery detect click event:
+**jQuery selector examples:**
+
+~~~
+$('a')
+$('.notice')
+$('#number-input')
+$('[href="#guess"]')
+~~~
+
+**jQuery Show/Hide elements:**
+
+~~~
+$(selector).show();
+$(selector).hide();
+~~~
+
+**jQuery detect click event:**
 
 ~~~
 $(selector).click(function(){
   // code to handle the click
 });
+~~~
+
+**Generating random number**
+
+~~~
+Math.random(); // 0–0.999999
+Math.floor(Math.random() * 100) // 0–99
+Math.floor(Math.random() * 100) + 1; // 1–100
 ~~~
 
 ## Taking the code further
