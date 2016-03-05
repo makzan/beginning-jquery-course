@@ -10,6 +10,14 @@ p, ol, ul, li, h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
 }
+
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+  margin-left: 2em;
+}
+
 ul, ol {
   list-style-position: inside;
 }
