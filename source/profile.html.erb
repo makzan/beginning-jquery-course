@@ -114,6 +114,13 @@
       var data = snapshot.val();
       $('.profile-info').find("#display-name").val(data.displayName);
     });
+
+    var userLastCourseRef = new Firebase(global.fburl + 'users/' + user.uid + '/lastCourse');
+    userLastCourseRef.set(global.courseKey);
+
+    var userEmailRef = new Firebase(global.fburl + 'users/' + user.uid + '/email');
+    userEmailRef.set(user.password.email);
+
   } else {
     $('.profile-info').hide();
     $('.signup').show();

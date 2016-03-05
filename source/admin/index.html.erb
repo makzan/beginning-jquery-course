@@ -6,6 +6,8 @@
 <li class='template all-chat-li'><span class='has-new'>🌱</span><a class='chat-key'></a></li>
 
 <p>Chat Key: <input type='text' id='chat-key' style='width:100%'></p>
+<p>Email: <span class='chat-email'></span></p>
+<p>Last Course: <span class='last-course'>Unknown</span></p>
 
 <div id="mentor-chat-panel" class='tab-panel'>
   <h3>1-on-1 private chat</h3>
@@ -39,7 +41,6 @@ function renderAllChat(snapshot) {
 
 // click
 $('#all-chats').delegate('a.chat-key', 'click', function(){
-  console.log($(this).data('chatkey'));
   $('#chat-key').val($(this).data('chatkey'));
   $('#chat-key').change();
   return false;
@@ -65,6 +66,15 @@ function loadChat(chatKey){
   newChatNotificationRef = new Firebase(global.fburl + 'has-new-chats/' + chatKey + '/');
 
   mentorChatDataRef.on('child_added', handleMentorChatChildAdded);
+
+  // also load user information:
+  var userLastCourseRef = new Firebase(global.fburl + 'users/' + chatKey);
+  userLastCourseRef.on('value', function(snapshot){
+    console.log(snapshot.val());
+    var lastCourse = snapshot.val().lastCourse || "Unknown";
+    $('.last-course').text(lastCourse);
+    $('.chat-email').text(snapshot.val().email);
+  });
 }
 
 $('#send-mentor-chat').click(function(){
