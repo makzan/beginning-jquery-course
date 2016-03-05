@@ -5,6 +5,7 @@
 </style>
 
 <div class="login">
+  <h2>Existing user</h2>
   <p>Email:<br>
   <input type='email' id='email'>
   </p>
@@ -14,27 +15,108 @@
   <input type='password' id='password'>
   </p>
 
-  <p><input type='submit' id='login-button' value='login'></p>
+  <p><input type='submit' id='login-button' value='Login'></p>
+
+
+  <p><a href='#reset-password'>Reset Password</a></p>
 </div>
 
-<div class="profile">
+<div class="signup default-hidden">
+  <h2>Create account</h2>
+  <p>Email:<br>
+  <input type='email' id='new-email'>
+  </p>
+
+  <p>
+  Password:<br>
+  <input type='password' id='new-password'>
+  </p>
+
+  <p><input type='submit' id='signup-button' value='Signup'></p>
+
+
+</div>
+
+<div class="profile-info">
   <figure class='profile-pic'>
     <img>
   </figure>
   <p>You’re logged in as <span class='email'></span>.</p>
+  <p>Display Name: <input type='text' id='display-name'></p>
   <p><a href='#logout'>Logout</a></p>
 </div>
 
 <script>
 
+  // sign-up
+  $('#signup-button').click(function(){
+    var email = $('#new-email').val();
+    var password = $('#new-password').val();
+
+    if (email !== '' && password !== '') {
+      var ref = new Firebase(global.fburl);
+      ref.createUser({
+        email    : email,
+        password : password
+      }, function(error, userData) {
+        if (error) {
+          alert("Error creating user:" + error);
+        } else {
+          console.log("Successfully created user account with uid:", userData.uid);
+          userInfoRef = new Firebase(global.fburl + 'users/' + userData.uid);
+          userInfoRef.set({
+            displayName: email.split('@')[0],
+            email: email
+          });
+
+          ref.authWithPassword({
+            email    : email,
+            password : password
+          }, function(){
+            location.reload();
+          });
+        }
+      });
+    }
+  });
+
+  // email and readerEmail
+  if (localStorage['readerEmail'] !== undefined) {
+    $('#email').val(localStorage['readerEmail']);
+  }
+
+  // reset password
+  $('[href="#reset-password"]').click(function(){
+    var ref = new Firebase(global.fburl);
+    ref.resetPassword({
+      email : $('#email').val()
+    }, function(error) {
+      if (error === null) {
+        alert("Password reset email sent successfully");
+      } else {
+        alert("Error sending password reset email:" + error);
+      }
+    });
+
+    return false;
+  });
+
+  // UI display
 
   if (user !== null) {
     $('.login').hide();
-    $('.profile').show();
-    $('.profile').find('.email').text(user.password.email);
-    $('.profile').find('.profile-pic').find('img').attr('src', user.password.profileImageURL);
+    $('.profile-info').show();
+    $('.profile-info').find('.email').text(user.password.email);
+    $('.profile-info').find('.profile-pic').find('img').attr('src', user.password.profileImageURL);
+
+    var userInfoRef = new Firebase(global.fburl + 'users/' + user.uid);
+    userInfoRef.on('value', function(snapshot){
+      var data = snapshot.val();
+      $('.profile-info').find("#display-name").val(data.displayName);
+    });
   } else {
-    $('.profile').hide();
+    $('.profile-info').hide();
+    $('.signup').show();
   }
 
   // logout
@@ -58,5 +140,16 @@
         location.reload();
       }
     });
+  });
+
+  // display name
+  $('#display-name').change(function(){
+    var user = authRef.getAuth();
+    if (user !== null) {
+      var userRef = new Firebase(global.fburl + 'users/' + user.uid);
+      userRef.set({
+        displayName: $(this).val()
+      })
+    }
   });
 </script>

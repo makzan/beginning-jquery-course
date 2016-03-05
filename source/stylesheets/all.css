@@ -113,3 +113,7 @@ footer {
 .template {
   display: none;
 }
+
+.default-hidden {
+  display: none;
+}

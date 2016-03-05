@@ -66,8 +66,11 @@
   }
 </style>
 
+<h2>Chat</h2>
+<div class="please-login-alert default-hidden">
+  <a href='/profile.html'>Login to chat</a>
+</div>
 <section class="chat">
-  <h2><a href='/chat.html'>Chat</a></h2>
   <div class="tabs">
     <ul>
       <li><a href='#global-chat-panel' class='active tab'>Global</a>
@@ -93,6 +96,22 @@
 </section>
 
 <script>
+  var readerEmail = 'annonymous@example.com';
+  var readerName = 'Annonymous';
+
+  // login
+  var user = authRef.getAuth();
+  if (user === null) {
+    $('.please-login-alert').show();
+    $('.chat').hide();
+  } else {
+    readerEmail = user.password.email;
+
+    var userInfoRef = new Firebase(global.fburl + 'users/' + user.uid);
+    userInfoRef.on('value', function(snapshot){
+      readerName = snapshot.val().displayName;
+    });
+  }
 
   // tab control
   $('a.tab').click(function(){
@@ -137,11 +156,29 @@
   // Mentor Chat
   if (readerEmail.length > 0) {
     var emailSlug = readerEmail.replace('@','-at-').replace(/\./g,'-dot-');
-    var mentorChatDataRef = new Firebase('https://teaching.firebaseio.com/jQuery/mentor-chats/' + emailSlug + '/chat/');
 
-    var hasNewRef = new Firebase('https://teaching.firebaseio.com/jQuery/mentor-chats/' + emailSlug + '/has-new-chat');
+    var originalMentorChatDataRef = new Firebase(global.fburl + 'jQuery/mentor-chats/' + emailSlug + '/chat/');
+    var mentorChatDataRef = new Firebase(global.fburl + 'mentor-chats/' + user.uid + '/chat/');
 
-    var newChatNotificationRef = new Firebase('https://teaching.firebaseio.com/jQuery/has-new-chats/' + emailSlug + '/');
+    // if exists original data
+    originalMentorChatDataRef.on('value', function(snapshot){
+      if (snapshot.val() !== null) {
+        moveFbRecord(originalMentorChatDataRef, mentorChatDataRef);
+      }
+    });
+
+    var originalNewChatNotificationRef = new Firebase(global.fburl + 'jQuery/has-new-chats/' + emailSlug + '/');
+    var newChatNotificationRef = new Firebase(global.fburl + 'has-new-chats/' + user.uid + '/');
+
+    // if exists original data
+    originalNewChatNotificationRef.on('value', function(snapshot){
+      if (snapshot.val() !== null) {
+        moveFbRecord(originalNewChatNotificationRef, newChatNotificationRef);
+      }
+    });
+
+
+
 
     $('#send-mentor-chat').click(function(){
 
@@ -162,10 +199,8 @@
       displayMentorChatMessage(message.name, message.text);
 
       if (message.is_mentor === true) {
-        hasNewRef.set(false);
         newChatNotificationRef.set(false);
       } else {
-        hasNewRef.set(true);
         newChatNotificationRef.set(true);
       }
     });

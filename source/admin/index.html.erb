@@ -18,7 +18,7 @@
 <script>
 
 // all chat
-var allChatRef = new Firebase('https://teaching.firebaseio.com/jQuery/has-new-chats/');
+var allChatRef = new Firebase(global.fburl + 'has-new-chats/');
 allChatRef.on('value', renderAllChat);
 function renderAllChat(snapshot) {
   $('#all-chats').empty();
@@ -50,7 +50,7 @@ $('#all-chats').delegate('a.chat-key', 'click', function(){
 
 // chat key
 $('#chat-key').change(function(){
-  var chatKey = $(this).val().replace('https://teaching.firebaseio.com/jQuery/mentor-chats/', '');
+  var chatKey = $(this).val().replace(global.fburl + 'mentor-chats/', '');
   $(this).val(chatKey);
 
   $('#mentor-chat-messages').empty();
@@ -60,10 +60,9 @@ $('#chat-key').change(function(){
 var mentorChatDataRef, hasNewRef, newChatNotificationRef;
 
 function loadChat(chatKey){
-  mentorChatDataRef = new Firebase('https://teaching.firebaseio.com/jQuery/mentor-chats/' + chatKey + '/chat/');
-  hasNewRef = new Firebase('https://teaching.firebaseio.com/jQuery/mentor-chats/' + chatKey + '/has-new-chat');
+  mentorChatDataRef = new Firebase(global.fburl + 'mentor-chats/' + chatKey + '/chat/');
 
-  newChatNotificationRef = new Firebase('https://teaching.firebaseio.com/jQuery/has-new-chats/' + chatKey + '/');
+  newChatNotificationRef = new Firebase(global.fburl + 'has-new-chats/' + chatKey + '/');
 
   mentorChatDataRef.on('child_added', handleMentorChatChildAdded);
 }
@@ -83,10 +82,8 @@ function handleMentorChatChildAdded(snapshot) {
   displayMentorChatMessage(message.name, message.text);
 
   if (message.is_mentor === true) {
-    hasNewRef.set(false);
     newChatNotificationRef.set(false);
   } else {
-    hasNewRef.set(true);
     newChatNotificationRef.set(true);
   }
 }
