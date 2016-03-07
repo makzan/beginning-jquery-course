@@ -1,12 +1,19 @@
 
+<h1>Web Design Courses</h1>
 <ul class='card-list'>
+  <% data.courses.courses.each do |course| %>
+    <li><%= link_to course, "courses/#{course.gsub(/\s/,'-').downcase}.html" %></li>
+  <% end %>
+
+  <!--
 <% blog.articles.sort{|a,b| a.data.cid <=> b.data.cid}.each do |article| %>
   <li>
-    <p><%= link_to article.title, article %> <!--<span><%= article.date.strftime('%b %e') %></span>-->
+    <p><%= link_to article.title, article %>
       <% if !article.data.summary.nil? %>
         —<%= article.data.summary %>
       <% end %>
     </p>
   </li>
 <% end %>
+-->
 </ul>
