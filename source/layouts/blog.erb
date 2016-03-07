@@ -1,4 +1,4 @@
-<% wrap_layout :sidechat do %>
+<% wrap_layout :layout do %>
   <article id='post' data-cid="<%= current_page.data.cid %>">
     <h1><%= current_page.data.title %></h1>
     <%= yield %>
@@ -6,10 +6,10 @@
 <% end %>
 
 <script>
-  if (readerEmail !== "" && readerEmail !== undefined) {
+  /*if (readerEmail !== "" && readerEmail !== undefined) {
     var emailSlug = readerEmail.replace('@','-at-').replace(/\./g,'-dot-');
     var cid = $('article#post').data('cid') * 1;
     var completedDataRef = new Firebase('https://teaching.firebaseio.com/jQuery/readers/' + emailSlug + '/completed/' + cid);
     completedDataRef.set(true);
-  }
+  }*/
 </script>

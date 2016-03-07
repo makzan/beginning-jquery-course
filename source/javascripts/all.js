@@ -1,9 +1,8 @@
+//= require global
 //= require_tree .
 
 
-var global = {
-  fburl: 'https://teaching.firebaseio.com/'
-};
+
 
 
 $('#error-message').click(function(){

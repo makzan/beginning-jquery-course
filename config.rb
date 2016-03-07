@@ -29,13 +29,10 @@ activate :blog do |blog|
   # blog.page_link = "page/{num}"
 end
 
-page "*", layout: :sidechat
 page "/feed.xml", layout: false
 
 page "cards/*", layout: :blog
 
-page "chat.html", layout: :layout
-page "admin/*", layout: :noside
 
 ###
 # Compass

@@ -49,7 +49,7 @@ body {
 
 .course-page {
   width: 100%;
-  max-width: 1100px;
+  max-width: 900px;
   margin: auto;
   border: 3px solid black;
   background: white;
@@ -65,12 +65,7 @@ header {
   width: 100%;
   background: rgb(255,204,1);
 }
-main#main-content {
-  width: 70%;
-}
-aside {
-  width: 28%;
-}
+
 footer {
   width: 100%;
   background: rgb(255,204,1);

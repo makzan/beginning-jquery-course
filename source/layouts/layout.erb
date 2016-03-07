@@ -6,6 +6,8 @@
   <!-- Always force latest IE rendering engine or request Chrome Frame -->
   <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <!-- Use title if it's in the page YAML frontmatter -->
   <title><%= current_page.data.title || "Beginning jQuery" %></title>
 
@@ -21,10 +23,6 @@
   -->
 
   <script src='https://code.jquery.com/jquery.min.js'></script>
-
-  <script type="text/javascript" src="/vendors/autolink.js"></script>
-  <link rel="stylesheet" type="text/css" href="/vendors/trix.css">
-  <script type="text/javascript" src="/vendors/trix.js"></script>
 
   <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
 
@@ -58,7 +56,9 @@
     <%= partial "header" %>
   </header>
 
-  <%= yield %>
+  <main id='main-content'>
+    <%= yield %>
+  </main>
 
   <footer>
     &copy; <%= Time.now.year %>, All rights reserved by <a href='http://makzan.net'>Makzan</a>.
@@ -66,6 +66,32 @@
 </div>
 
 
+
+<!-- Intercom -->
+<script>
+  if (userInfo !== undefined) {
+    window.intercomSettings = {
+      app_id: "hvjokato", //production: "sei61ozu",
+      name: userInfo.displayName, // Full name
+      email: userInfo.email, // Email address
+      uid: user.uid,
+      created_at: 0 // Signup date as a Unix timestamp
+    };
+  }
+
+</script>
+<script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/sei61ozu';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
+<!-- End Intercom -->
+
+
+
+<script src="/vendors/jquery.smoothstate.js"></script>
+<script>
+  $('#main-content').smoothState({
+    prefetch: true,
+    pageCacheSize: 10
+  });
+</script>
 
 </body>
 </html>
