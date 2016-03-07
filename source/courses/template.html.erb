@@ -1,6 +1,6 @@
 <h1><%= course_name %> Course</h1>
 
-<ul class='card-list'>
+<ol class='card-list'>
   <% cids = data.courses[course_name].split(',') %>
   <% cids.each do |id| %>
     <% article = sitemap.where(cid: id.to_i).first %>
@@ -12,5 +12,5 @@
       </p>
     </li>
   <% end %>
-</ul>
+</ol>
 

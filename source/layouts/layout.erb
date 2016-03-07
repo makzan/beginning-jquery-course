@@ -50,20 +50,20 @@
 
   <div id='error-message'></div>
 
+<header>
+  <div style='float:right'><%= partial "profile" %></div>
+  <%= partial "header" %>
+</header>
 <div class="course-page">
-  <header>
-    <div style='float:right'><%= partial "profile" %></div>
-    <%= partial "header" %>
-  </header>
 
   <main id='main-content'>
     <%= yield %>
   </main>
 
-  <footer>
-    &copy; <%= Time.now.year %>, All rights reserved by <a href='http://makzan.net'>Makzan</a>.
-  </footer>
 </div>
+<footer>
+  &copy; <%= Time.now.year %>, All rights reserved by <a href='http://makzan.net'>Makzan</a>.
+</footer>
 
 
 

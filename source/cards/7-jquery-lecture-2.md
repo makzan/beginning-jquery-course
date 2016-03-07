@@ -33,7 +33,7 @@ For the full selector list, you may check out the following jQuery documentation
 ## Showing and Hiding elements
 After we select the elements, we perform an action (or a series of actions) on the selection. These actions may be toggling visibility, manipulating elements or registering events handling.
 
-One basic action is to display and hide the selected elements. We usually archive that by <code>show()</code> and <code>hide()</code> method.
+One basic action is to display and hide the selected elements. We usually achieve that by <code>show()</code> and <code>hide()</code> method.
 
 For example, imagine that it’s a gmail-like web app, when user clicks on the “Compose Mail” button, we show a composer dialog.
 
@@ -58,6 +58,7 @@ Here is a full demo on the email composing form’s toggling HTML and JavaScript
 <a href="http://codepen.io/makzan/pen/jEvdXM">http://codepen.io/makzan/pen/jEvdXM</a>
 
 ## Example of selecting and changing text
+
 Given the following example:
 
 <pre>&lt;p&gt;Enjoy the rest of &lt;span class='the-day'&gt;the day&lt;/span&gt;.&lt;/p&gt;
@@ -77,6 +78,7 @@ You may find the code example here:
 <a href="http://codepen.io/makzan/pen/yyxwMp">http://codepen.io/makzan/pen/yyxwMp</a>
 
 ## JavaScript best practices
+
 When you’re writing more JavaScript, you should start learning to write the JavaScript in the right way. There are many essays and books discussing the best practices that we should follow. The following lists few of them that I highly recommend you to check them out.
 
 <ul>
@@ -84,7 +86,9 @@ When you’re writing more JavaScript, you should start learning to write the Ja
 	<li><a href="http://jstherightway.org/">JS the right way</a></li>
 	<li><a href="https://developer.yahoo.com/performance/rules.html">Yahoo! Performance Guide</a></li>
 </ul>
+
 ## JavaScript and jQuery books
+
 If you would like to read book for more details, I recommend the following books.
 
 <em><a href="http://shop.oreilly.com/product/0636920012740.do">Head First jQuery</a></em> — The head first series contains lots of illustrations. This is definitely the jQuery for absolute beginner.
