@@ -122,11 +122,15 @@
     $('.profile-info').find('.email').text(user.password.email);
     $('.profile-info').find('.profile-pic').find('img').attr('src', user.password.profileImageURL);
 
+    $('.profile-info').find("#display-name").val(userInfo.displayName);
+
     var userInfoRef = new Firebase(global.fburl + 'users/' + user.uid);
     userInfoRef.on('value', function(snapshot){
       var data = snapshot.val();
       $('.profile-info').find("#display-name").val(data.displayName);
     });
+
+
   } else {
     $('.profile-info').hide();
     $('.signup').show();
@@ -154,7 +158,12 @@
       } else {
         console.log("Authenticated successfully with payload:", authData);
 
-        setUserInfo(null, authData.password.email, authData.uid);
+        var userInfoRef = new Firebase(global.fburl + 'users/' + authData.uid);
+        userInfoRef.on('value', function(snapshot){
+          var data = snapshot.val();
+          setUserInfo(data.displayName, authData.password.email, authData.uid);
+        });
+
 
         location.reload();
       }
