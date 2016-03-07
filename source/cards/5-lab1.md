@@ -2,7 +2,7 @@
 cid: 5
 date: 2016-03-04
 title: Lab 1—Basic HTML and jQuery exercises
-tag: lab, jquery
+tags: lab, jquery
 ---
 
 <p>This is the first lab of the Beginning jQuery course.

@@ -11,7 +11,7 @@ activate :blog do |blog|
   blog.permalink = "cards/{cid}-{title}.html"
   # Matcher for blog source files
   blog.sources = "cards/{cid}-{title}.html"
-  # blog.taglink = "tags/{tag}.html"
+  blog.taglink = "tags/{tag}.html"
   blog.layout = "blog"
   # blog.summary_separator = /(READMORE)/
   # blog.summary_length = 250
@@ -32,6 +32,11 @@ end
 page "/feed.xml", layout: false
 
 page "cards/*", layout: :blog
+
+data.courses.courses.each do |course|
+  slug = course.gsub(/\s/,'-').downcase
+  proxy "/courses/#{slug}.html", "/courses/template.html", locals: { course_name: course, slug:slug }, ignore: true
+end
 
 
 ###
