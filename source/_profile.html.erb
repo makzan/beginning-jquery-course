@@ -1,32 +1,6 @@
-<a href='/profile.html'>Profile</a>
-<!--<p>-->
-  <!--Your name: <input type='text' id='reader-name' placeholder=''><br>-->
-  <!--Email: <input type='email' id='reader-email' placeholder='email@example.com'>-->
-<!--</p>-->
-
-
+<a id='sign-in-to-chat' href='/profile.html'>Profile</a>
 <script>
-  // Reader’s name
-  // if (localStorage['readerName'] !== undefined) {
-  //   readerName = localStorage['readerName'];
-  //   $('#reader-name').val(readerName);
-  // }
-  // var readerName = $('#reader-name').val();
-
-  // $('#reader-name').bind('keyup', function(){
-  //   localStorage['readerName'] = $(this).val();
-  //   readerName = $(this).val();
-  // });
-
-  // // Reader’s email
-  // if (localStorage['readerEmail'] !== undefined) {
-  //   readerEmail = localStorage['readerEmail'];
-  //   $('#reader-email').val(readerEmail);
-  // }
-  // var readerEmail = $('#reader-email').val();
-
-  // $('#reader-email').bind('keyup', function(){
-  //   localStorage['readerEmail'] = $(this).val();
-  //   readerEmail = $(this).val();
-  // });
+  if (user === null) {
+    $('#sign-in-to-chat').text("Sign in to chat");
+  }
 </script>

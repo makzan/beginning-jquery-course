@@ -6,16 +6,18 @@
 
 <div class="login">
   <h2>Existing user</h2>
-  <p>Email:<br>
-  <input type='email' id='email'>
-  </p>
+  <form>
+    <p>Email:<br>
+    <input type='email' id='email'>
+    </p>
 
-  <p>
-  Password:<br>
-  <input type='password' id='password'>
-  </p>
+    <p>
+    Password:<br>
+    <input type='password' id='password'>
+    </p>
 
-  <p><input type='submit' id='login-button' value='Login'></p>
+    <p><input type='submit' id='login-button' value='Login'></p>
+  </form>
 
 
   <p><a href='#reset-password'>Reset Password</a></p>
@@ -23,17 +25,18 @@
 
 <div class="signup default-hidden">
   <h2>Create account (Use the same email to keep all existing chats)</h2>
-  <p>Email:<br>
-  <input type='email' id='new-email'>
-  </p>
+  <form>
+    <p>Email:<br>
+    <input type='email' id='new-email'>
+    </p>
 
-  <p>
-  Password:<br>
-  <input type='password' id='new-password'>
-  </p>
+    <p>
+    Password:<br>
+    <input type='password' id='new-password'>
+    </p>
 
-  <p><input type='submit' id='signup-button' value='Signup'></p>
-
+    <p><input type='submit' id='signup-button' value='Signup'></p>
+  </form>
 
 </div>
 
@@ -54,6 +57,8 @@
     var password = $('#new-password').val();
 
     if (email !== '' && password !== '') {
+      $(this).text("Processing...").attr('disabled', 'true');
+
       var ref = new Firebase(global.fburl);
       ref.createUser({
         email    : email,
@@ -63,11 +68,17 @@
           alert("Error creating user:" + error);
         } else {
           console.log("Successfully created user account with uid:", userData.uid);
-          userInfoRef = new Firebase(global.fburl + 'users/' + userData.uid);
-          userInfoRef.set({
+
+          userInfo = {
             displayName: email.split('@')[0],
-            email: email
-          });
+            email: email,
+            uid: userData.uid
+          }
+
+          userInfoRef = new Firebase(global.fburl + 'users/' + userData.uid);
+          userInfoRef.set(userInfo);
+
+          setUserInfo(userInfo.name, userInfo.email, userInfo.uid)
 
           ref.authWithPassword({
             email    : email,
@@ -78,6 +89,8 @@
         }
       });
     }
+
+    return false;
   });
 
   // email and readerEmail
@@ -128,6 +141,9 @@
 
   // login
   $('#login-button').click(function(){
+
+    $(this).attr('disabled', 'true').val('Processing...');
+
     authRef.authWithPassword({
       "email": $('#email').val(),
       "password": $('#password').val()
@@ -137,19 +153,22 @@
         alert("Login Failed: " + error);
       } else {
         console.log("Authenticated successfully with payload:", authData);
+
+        setUserInfo(null, authData.password.email, authData.uid);
+
         location.reload();
       }
     });
+
+    return false;
   });
 
   // display name
   $('#display-name').change(function(){
     var user = authRef.getAuth();
     if (user !== null) {
-      var userRef = new Firebase(global.fburl + 'users/' + user.uid);
-      userRef.set({
-        displayName: $(this).val()
-      })
+      var userRef = new Firebase(global.fburl + 'users/' + user.uid + '/displayName');
+      userRef.set($(this).val());
     }
   });
 </script>

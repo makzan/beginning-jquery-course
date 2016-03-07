@@ -34,6 +34,10 @@ h1 {
   font-size: 1.2em;
 }
 
+h1 small {
+  font-weight: normal;
+}
+
 body {
   background: #efefef;
   padding: 3em 0;
@@ -56,18 +60,14 @@ body {
 }
 
 .course-page > * {
-  display: inline-block;
-  vertical-align: top;
   padding: 1em;
 }
 
 header {
-  width: 100%;
   background: rgb(255,204,1);
 }
 
 footer {
-  width: 100%;
   background: rgb(255,204,1);
 }
 

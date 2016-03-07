@@ -71,12 +71,13 @@
 <script>
   if (userInfo !== undefined) {
     window.intercomSettings = {
-      app_id: "hvjokato", //production: "sei61ozu",
+      app_id: "sei61ozu", //production: "sei61ozu", test:"hvjokato"
       name: userInfo.displayName, // Full name
       email: userInfo.email, // Email address
-      uid: user.uid,
+      uid: userInfo.uid,
       created_at: 0 // Signup date as a Unix timestamp
     };
+    console.log(intercomSettings);
   }
 
 </script>
