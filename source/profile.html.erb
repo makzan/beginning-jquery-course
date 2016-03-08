@@ -122,7 +122,9 @@
     $('.profile-info').find('.email').text(user.password.email);
     $('.profile-info').find('.profile-pic').find('img').attr('src', user.password.profileImageURL);
 
-    $('.profile-info').find("#display-name").val(userInfo.displayName);
+    if (userInfo !== undefined) {
+      $('.profile-info').find("#display-name").val(userInfo.displayName);
+    }
 
     var userInfoRef = new Firebase(global.fburl + 'users/' + user.uid);
     userInfoRef.on('value', function(snapshot){
