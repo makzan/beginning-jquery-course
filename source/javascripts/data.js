@@ -6,9 +6,13 @@
 
   window.setUserInfo = function(name, email, uid) {
     window.userInfo = window.userInfo || {};
+
+
     if (name !== null && name.length > 0) window.userInfo.displayName = name;
     if (email !== null) window.userInfo.email = email;
     if (uid !== null) window.userInfo.uid = uid;
+
+    console.log('setting user info: ', name, email, uid, userInfo);
 
     localStorage["userInfo"] = JSON.stringify(userInfo);
 
