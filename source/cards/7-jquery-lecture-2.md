@@ -3,6 +3,7 @@ cid: 7
 date: 2016-03-07
 title: Lecture 2—Selecting and Hiding HTML DOM elements
 tags: lecture, jquery
+icon: notes
 ---
 
 This is lecture 2 of the Beginning jQuery course. Make sure you have read lecture 1 and can code basic HTML and JavaScript.

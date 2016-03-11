@@ -3,6 +3,7 @@ cid: 6
 date: 2016-03-05
 title: Exercise 1—Guess-what-number Game with jQuery
 tags: jQuery, beginner, exercise
+icon: exercise
 ---
 
 In this exercise, we create a guess-what-number game. The following steps list the requirement of the game.

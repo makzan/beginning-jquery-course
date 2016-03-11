@@ -3,6 +3,7 @@ cid: 9
 date: 2016-03-11
 title: Adding jQuery into HTML
 tags: note, jquery
+icon: notes
 ---
 
 When using jQuery in Codepen, we only need to specific the library by the quick add feature. (Pen setting > JavaScript > Quick Add > jQuery)

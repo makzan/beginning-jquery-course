@@ -3,6 +3,7 @@ cid: 8
 date: 2016-03-07
 title: Lab 2—Adding and Removing class
 tags: lab, jquery
+icon: exercise
 ---
 
 

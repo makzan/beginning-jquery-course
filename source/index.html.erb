@@ -2,7 +2,9 @@
 <h1>Web Design Courses</h1>
 <ul class='card-list'>
   <% data.courses.courses.each do |course| %>
-    <li><%= link_to course, "courses/#{course.gsub(/\s/,'-').downcase}.html" %></li>
+    <li>
+      <%= link_to course, "courses/#{course.gsub(/\s/,'-').downcase}.html" %>
+    </li>
   <% end %>
 
   <!--

@@ -3,6 +3,7 @@ cid: 4
 date: 2016-03-01
 title: Lecture 1—Selector and Actions
 tags: lecture, jquery
+icon: notes
 ---
 
 In web technology that runs on browser, we use HTML, CSS and JavaScript. HTML is for organizing and groping content. CSS is for setting visual styles of the content. JavaScript adds interactive behaviors to manipulate the content and to change their styles.

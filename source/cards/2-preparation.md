@@ -3,6 +3,7 @@ cid: 2
 date: 2016-03-01
 title: Preparating for the course
 tags: lecture, jquery
+icon: notes
 ---
 
 Welcome to Beginning jQuery course. I’m Thomas Mak (a.k.a. Makzan).
