@@ -24,7 +24,7 @@
 </div>
 
 <div class="signup default-hidden">
-  <h2>Create account (Use the same email to keep all existing chats)</h2>
+  <h2>Create account</h2>
   <form>
     <p>Email:<br>
     <input type='email' id='new-email'>
@@ -45,141 +45,148 @@
     <img>
   </figure>
   <p>You’re logged in as <span class='email'></span>.</p>
-  <p>Display Name: <input type='text' id='display-name'></p>
+  <p>Display Name: <input type='text' id='display-name' placeholder='Loading...'><small>(Auto-saved. Must not be empty)</small></p>
   <p><a href='#logout'>Logout</a></p>
 </div>
 
 <script>
 
-  // sign-up
-  $('#signup-button').click(function(){
-    var email = $('#new-email').val();
-    var password = $('#new-password').val();
+  (function(){
+    // sign-up
+    $('#signup-button').click(function(){
+      var email = $('#new-email').val();
+      var password = $('#new-password').val();
 
-    if (email !== '' && password !== '') {
-      $(this).text("Processing...").attr('disabled', 'true');
+      if (email !== '' && password !== '') {
+        $(this).val("Processing...").attr('disabled', 'true');
 
-      var ref = new Firebase(global.fburl);
-      ref.createUser({
-        email    : email,
-        password : password
-      }, function(error, userData) {
-        if (error) {
-          alert("Error creating user:" + error);
-        } else {
-          console.log("Successfully created user account with uid:", userData.uid);
+        var ref = new Firebase(global.fburl);
+        ref.createUser({
+          email    : email,
+          password : password
+        }, function(error, userData) {
+          if (error) {
+            alert("Error creating user:" + error);
+            $('#signup-button').val("Signup").removeAttr('disabled');
+          } else {
+            console.log("Successfully created user account with uid:", userData.uid);
 
-          userInfo = {
-            displayName: email.split('@')[0],
-            email: email,
-            uid: userData.uid
+            ref.authWithPassword({
+              email    : email,
+              password : password
+            }, function(){
+              var userData = new UserData();
+              userData.saveDisplayName(email);
+
+              var displayName = email.split('@')[0];
+              userData.saveDisplayName(displayName);
+
+              location.reload();
+            });
           }
-
-          userInfoRef = new Firebase(global.fburl + 'users/' + userData.uid);
-          userInfoRef.set(userInfo);
-
-          setUserInfo(userInfo.name, userInfo.email, userInfo.uid)
-
-          ref.authWithPassword({
-            email    : email,
-            password : password
-          }, function(){
-            location.reload();
-          });
-        }
-      });
-    }
-
-    return false;
-  });
-
-  // email and readerEmail
-  if (localStorage['readerEmail'] !== undefined) {
-    $('#email').val(localStorage['readerEmail']);
-  }
-
-  // reset password
-  $('[href="#reset-password"]').click(function(){
-    var ref = new Firebase(global.fburl);
-    ref.resetPassword({
-      email : $('#email').val()
-    }, function(error) {
-      if (error === null) {
-        alert("Password reset email sent successfully");
-      } else {
-        alert("Error sending password reset email:" + error);
+        });
       }
+
+      return false;
     });
 
-    return false;
-  });
+  })();
+
+  (function(){
+    // reset password
+    $('[href="#reset-password"]').click(function(){
+      var ref = new Firebase(global.fburl);
+      ref.resetPassword({
+        email : $('#email').val()
+      }, function(error) {
+        if (error === null) {
+          alert("Password reset email sent successfully");
+        } else {
+          alert("Error sending password reset email:" + error);
+        }
+      });
+
+      return false;
+    });
+  })();
 
   // UI display
 
-  if (user !== null) {
-    $('.login').hide();
-    $('.profile-info').show();
-    $('.profile-info').find('.email').text(user.password.email);
-    $('.profile-info').find('.profile-pic').find('img').attr('src', user.password.profileImageURL);
+  (function(){
+    var user = (new UserData()).getAuth();
 
-    if (userInfo !== undefined) {
-      $('.profile-info').find("#display-name").val(userInfo.displayName);
+    if (user !== null) {
+      $('.login').hide();
+      $('.profile-info').show();
+      $('.profile-info').find('.email').text(user.password.email);
+      $('.profile-info').find('.profile-pic').find('img').attr('src', user.password.profileImageURL);
+
+
+      var userData = new UserData();
+      userData.displayName(function(name){
+        $('.profile-info').find("#display-name").val(name).removeAttr('placeholder');
+      });
+
+    } else {
+      $('.profile-info').hide();
+      $('.signup').show();
     }
-
-    var userInfoRef = new Firebase(global.fburl + 'users/' + user.uid);
-    userInfoRef.on('value', function(snapshot){
-      var data = snapshot.val();
-      $('.profile-info').find("#display-name").val(data.displayName);
-    });
-
-
-  } else {
-    $('.profile-info').hide();
-    $('.signup').show();
-  }
+  })();
 
   // logout
-  $('[href="#logout"]').click(function(){
-    authRef.unauth();
-    location.reload();
-    return false;
-  });
+  (function(){
+    var authRef = new Firebase(global.fburl);
+
+    $('[href="#logout"]').click(function(){
+      authRef.unauth();
+      location.reload();
+      return false;
+    });
+
+  })();
 
   // login
-  $('#login-button').click(function(){
+  (function(){
+    var authRef = new Firebase(global.fburl);
+    $('#login-button').click(function(){
 
-    $(this).attr('disabled', 'true').val('Processing...');
+      $(this).attr('disabled', 'true').val('Processing...');
 
-    authRef.authWithPassword({
-      "email": $('#email').val(),
-      "password": $('#password').val()
-    }, function(error, authData) {
-      if (error) {
-        console.log("Login Failed!", error);
-        alert("Login Failed: " + error);
-      } else {
-        console.log("Authenticated successfully with payload:", authData);
+      authRef.authWithPassword({
+        "email": $('#email').val(),
+        "password": $('#password').val()
+      }, function(error, authData) {
+        if (error) {
+          console.log("Login Failed!", error);
+          alert("Login Failed: " + error);
+        } else {
+          console.log("Authenticated successfully with payload:", authData);
 
-        var userInfoRef = new Firebase(global.fburl + 'users/' + authData.uid);
-        userInfoRef.on('value', function(snapshot){
-          var data = snapshot.val();
-          setUserInfo(data.displayName, authData.password.email, authData.uid);
-        });
+          location.reload();
+        }
+      });
 
+      return false;
+    });
+  })();
 
-        location.reload();
+  // display name
+  (function(){
+    var userData = new UserData();
+
+    $('#display-name').change(function(){
+      var newName = $(this).val();
+
+      var user = userData.getAuth();
+      if (user !== null) {
+        if (newName.length > 0) {
+          userData.saveDisplayName( newName );
+          Intercom('update', {"name": newName});
+        } else {
+          alert("Please provide a name for chat.");
+        }
       }
     });
 
-    return false;
-  });
-
-  // display name
-  $('#display-name').change(function(){
-    var user = authRef.getAuth();
-    if (user !== null) {
-      var userRef = new Firebase(global.fburl + 'users/' + user.uid + '/displayName');
-      userRef.set($(this).val());
-    }
-  });
+  })();
 </script>

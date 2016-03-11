@@ -50,35 +50,43 @@
 
   <div id='error-message'></div>
 
-<header>
-  <div style='float:right'><%= partial "profile" %></div>
-  <%= partial "header" %>
-</header>
-<div class="course-page">
+<div id='entire-page'>
+  <header>
+    <div style='float:right'>
+      <span id='open-chat-with-thomas' class='default-hidden'><a href='#open-chat'>Chat with Thomas</a> | </span>
+      <%= partial "profile" %>
+    </div>
+    <%= partial "header" %>
+  </header>
+  <div class="course-page">
 
-  <main id='main-content'>
-    <%= yield %>
-  </main>
+    <main id='main-content'>
+      <%= yield %>
+    </main>
+
+  </div>
+  <footer>
+    &copy; <%= Time.now.year %>, All rights reserved by <a href='http://makzan.net'>Makzan</a>.
+  </footer>
 
 </div>
-<footer>
-  &copy; <%= Time.now.year %>, All rights reserved by <a href='http://makzan.net'>Makzan</a>.
-</footer>
-
-
 
 <!-- Intercom -->
 <script>
-  if (userInfo !== undefined) {
-    window.intercomSettings = {
-      app_id: "sei61ozu", //production: "sei61ozu", test:"hvjokato"
-      name: userInfo.displayName, // Full name
-      email: userInfo.email, // Email address
-      uid: userInfo.uid,
-      created_at: 0 // Signup date as a Unix timestamp
-    };
-    console.log(intercomSettings);
-  }
+  (function(){
+    var userData = new UserData();
+    userData.displayName(function(displayName){
+      window.intercomSettings = {
+        app_id: "sei61ozu", //production: "sei61ozu", test:"hvjokato"
+        name: displayName, // Full name
+        email: userData.email(), // Email address
+        uid: userData.uid(),
+        created_at: 0 // Signup date as a Unix timestamp
+      };
+      console.log(intercomSettings);
+      Intercom('boot', intercomSettings);
+    });
+  })();
 
 </script>
 <script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/sei61ozu';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
@@ -88,9 +96,32 @@
 
 <script src="/vendors/jquery.smoothstate.js"></script>
 <script>
-  $('#main-content').smoothState({
+  var showOpenChatIfAvailable = function(){
+    // header UI
+    var user = (new UserData()).getAuth();
+    if (user !== null) {
+      $('#open-chat-with-thomas').show();
+    }
+  };
+  showOpenChatIfAvailable();
+
+
+  $('#entire-page').smoothState({
     prefetch: true,
-    pageCacheSize: 10
+    pageCacheSize: 10,
+    onAfter: function ($container, $newContent) {
+      showOpenChatIfAvailable();
+    }
+  });
+</script>
+
+
+<script>
+
+  // chat with Thomas
+  $('[href="#open-chat"]').click(function(){
+    Intercom('show');
+    return false;
   });
 </script>
 
