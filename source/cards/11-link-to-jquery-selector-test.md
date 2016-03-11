@@ -1,7 +1,7 @@
 ---
 cid: 11
 date: 2016-03-11
-title: Class 1 Demo
+title: Class 2 Demo
 link: http://codepen.io/makzan/pen/aNdrXb
 tags: link, jquery
 layout: link
