@@ -145,3 +145,11 @@ li {
   display: none;
 }
 
+
+.hide-in-mobile {
+  display: none;
+}
+
+@media screen and (min-width: 600px) {
+  .hide-in-mobile {display: inline};
+}
