@@ -80,11 +80,17 @@ end
 # activate :livereload
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+helpers do
+  def card_icon(card)
+    if !card.data.icon.nil?
+      return "\xF0\x9F\x93\xA2" if card.data.icon == 'annoncement'
+      return "&#x1F4D6;" if card.data.icon == 'notes'
+      return "\xE2\x9C\x8F" if card.data.icon == 'exercise'
+      return "\xF0\x9F\x92\xA1" if card.data.icon == 'explore'
+      return "\xF0\x9F\x93\x8E" if card.data.icon == 'link'
+    end
+  end
+end
 
 set :css_dir, 'stylesheets'
 

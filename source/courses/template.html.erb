@@ -10,13 +10,7 @@
   <% cids.each do |id| %>
     <% article = sitemap.where(cid: id.to_i).first %>
     <li>
-      <% if !article.data.icon.nil? %>
-        <%= "\xF0\x9F\x93\xA2" if article.data.icon == 'annoncement' %>
-        <%= "&#x1F4D6;" if article.data.icon == 'notes' %>
-        <%= "\xE2\x9C\x8F" if article.data.icon == 'exercise' %>
-        <%= "\xF0\x9F\x92\xA1" if article.data.icon == 'explore' %>
-        <%= "\xF0\x9F\x93\x8E" if article.data.icon == 'link' %>
-      <% end %>
+      <%= card_icon(article) %>
 
       <%= link_to article.title, article %>
       <% if !article.data.summary.nil? %>

@@ -12,6 +12,6 @@ But in real world, we aren’t using sandbox. We write HTML and JavaScript code 
 
 So, make sure you have included the jQuery library into the web page before running your jQuery code.
 
-```javascript
+```
 <script src='http://code.jquery.com/jQuery.min.js'></script>
 ```

@@ -1,6 +1,6 @@
 <% wrap_layout :layout do %>
   <article id='post' data-cid="<%= current_page.data.cid %>">
-    <h1><small><a href='javascript:history.back()' title='Go back'>🔙 Back</a> | </small><%= current_page.data.title %></h1>
+    <h1><%= card_icon(current_page) %> <%= current_page.data.title %></h1>
     <%= yield %>
   </article>
 <% end %>
