@@ -109,7 +109,7 @@ $('form input').keydown(function(){
 <p><a href="http://codepen.io/makzan/pen/WbeXRq">http://codepen.io/makzan/pen/WbeXRq</a>
 </p>
 <hr>
-<p>Please reply the email with your exercises. I’ll check them and reply you with suggestions. For any questions or queries, please also reply and raise it. I’m here to help.
+<p>Please <a href='#open-chat'>use chat</a> to send me your exercises. I’ll check them and reply you with suggestions. For any questions or queries, please also raise them. I’m here to help.
 </p>
 <p>Thanks and Best Regards,
 </p>

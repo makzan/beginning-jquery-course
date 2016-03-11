@@ -105,12 +105,22 @@
   };
   showOpenChatIfAvailable();
 
+  var handleChatWithThomas = function() {
+    // chat with Thomas
+    $('[href="#open-chat"]').click(function(){
+      Intercom('show');
+      return false;
+    });
+  };
+  handleChatWithThomas();
+
 
   $('#entire-page').smoothState({
     prefetch: true,
     pageCacheSize: 10,
     onAfter: function ($container, $newContent) {
       showOpenChatIfAvailable();
+      handleChatWithThomas();
     }
   });
 </script>
@@ -118,11 +128,7 @@
 
 <script>
 
-  // chat with Thomas
-  $('[href="#open-chat"]').click(function(){
-    Intercom('show');
-    return false;
-  });
+
 </script>
 
 </body>
