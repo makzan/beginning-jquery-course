@@ -1,10 +1,10 @@
+<h1><%= course_name %> Course</h1>
+
 <style>
   ul.card-list {
     list-style: none;
   }
 </style>
-<h1><%= course_name %> Course</h1>
-
 <ul class='card-list'>
   <% cids = data.courses[course_name].split(',') %>
   <% cids.each do |id| %>
