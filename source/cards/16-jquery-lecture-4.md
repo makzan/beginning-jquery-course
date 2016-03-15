@@ -161,7 +161,6 @@ icon: notes
 <h2>Summary</h2>
 <p>We went through the concept of loading data asynchronously with JavaScript. We also went through the techniques we use to make use of the requests and responses.
 </p>
-<p><img src="http://mak.la/signature" width="121" height="54" style="width: 121px; height: 54px;">
-</p>
+<p><img src="http://mak.la/signature" width="121" height="54" style="width: 121px; height: 54px;"></p>
 <p>–Thomas Mak
 </p>
