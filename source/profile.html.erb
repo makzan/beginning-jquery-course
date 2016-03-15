@@ -45,7 +45,7 @@
     <img>
   </figure>
   <p>You’re logged in as <span class='email'></span>.</p>
-  <p>Display Name: <input type='text' id='display-name' placeholder='Loading...'><small>(Auto-saved. Must not be empty)</small></p>
+  <p>Display Name: <input type='text' id='display-name' placeholder='Loading...'> <small>(Auto-saved)</small></p>
   <p><a href='#logout'>Logout</a></p>
 </div>
 
@@ -189,4 +189,12 @@
     });
 
   })();
+</script>
+
+
+
+
+<script>
+  // reset current course
+  localStorage.removeItem("current-course");
 </script>

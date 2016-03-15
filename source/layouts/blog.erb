@@ -3,4 +3,15 @@
     <h1><%= card_icon(current_page) %> <%= current_page.data.title %></h1>
     <%= yield %>
   </article>
+
+  <script>
+    // header breadcrumb
+    var currentCourse = localStorage["current-course"];
+    var url = "/courses/" + currentCourse.replace(/\s/g,'-').toLowerCase() + ".html";
+
+    if (currentCourse !== undefined) {
+      $('.welcome').hide();
+      $('.current-course-breadcrumb').html(" > <a href='" + url + "'>" + currentCourse + "</a>");
+    }
+  </script>
 <% end %>
