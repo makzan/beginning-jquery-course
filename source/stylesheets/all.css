@@ -11,6 +11,9 @@ p, ol, ul, li, h1, h2, h3, h4, h5, h6 {
   padding: 0;
 }
 
+::-moz-selection { background: rgb(255,204,1); }
+::selection { background: rgb(255,204,1); }
+
 ol ol,
 ol ul,
 ul ol,

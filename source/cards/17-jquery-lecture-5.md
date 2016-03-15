@@ -1,5 +1,5 @@
 ---
-cid: 16
+cid: 17
 date: 2016-03-15
 title: Lecture 5—jQuery plugins
 tags: lecture, jquery
