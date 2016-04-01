@@ -11,7 +11,9 @@ icon: notes
 </p>
 <p>This is lecture 5 of Beginning jQuery course. In this lecture, we explore how to use jQuery plugin.
 </p>
-<h2>Creating our own jQuery plugin</h2>
+
+## Creating our own jQuery plugin
+
 <p>The jQuery’s learning center provides a solid tutorial on creating plugin:
 </p>
 <p><a href="https://learn.jquery.com/plugins/basic-plugin-creation/">https://learn.jquery.com/plugins/basic-plugin-creation/</a>
@@ -47,7 +49,9 @@ icon: notes
 </p>
 <p>We can accept options as an object instead of taking comma-separated parameters. This is usually a more flexible way. It allows accepting many options without certain order. It also allow skipping options to use default plugin’s option value.
 </p>
-<h3>Example—Creating our slideshow plugin</h3>
+
+### Example—Creating our slideshow plugin
+
 <p><img src="https://dl.dropboxusercontent.com/u/3079250/Public%20for%20Beginning%20jQuery/slideshow.png" alt="slideshow image">
 </p>
 <p>We will use our slideshow code in our previous lab to demonstrate the plugin creation. The original code was in the following URL:
@@ -94,7 +98,9 @@ icon: notes
 </p>
 <p><a href="http://codepen.io/makzan/pen/RPbzKz">http://codepen.io/makzan/pen/RPbzKz</a>
 </p>
-<h2>jQuery UI plugin</h2>
+
+## jQuery UI plugin
+
 <p><img src="https://dl.dropboxusercontent.com/u/3079250/Public%20for%20Beginning%20jQuery/datepicker.png" alt="datepicker">
 </p>
 <p><a href="http://jqueryui.com/">jQuery UI</a> provides a collection of common interactions and widgets that we need when building web application. It includes handy tools such as <a href="http://jqueryui.com/draggable/">dragging</a>, <a href="http://jqueryui.com/sortable/">sorting</a> and <a href="http://jqueryui.com/datepicker/">date picker</a>.
@@ -128,12 +134,16 @@ icon: notes
 </pre>
 <p>Please note that the code contains server-side script (Ruby) and it probably doesn’t work in your browser without a server running. The purpose of the code is to demonstrate how it works.
 </p>
-<h2>jQuery mobile plugin</h2>
+
+## jQuery mobile plugin
+
 <p><a href="http://jquerymobile.com/">jQuery mobile</a> is a plugin that makes website act like a mobile app. It contain a large set of functions that mimics mobile application components and interactions by using jQuery and CSS styles. For example, it shows one page per view and comes with different <a href="http://makzan.net/mobile-web-app-dev-with-phonegap/transition/">page transition effects</a>.
 </p>
 <p>I created a <a href="http://makzan.net/mobile-web-app-dev-with-phonegap/">course dedicated for using jQuery mobile to create mobile web application</a> which is free for online reading. If you need to to create mobile web application, this is a good starting point.
 </p>
-<h2>Other 3rd party plugins</h2>
+
+## Other 3rd party plugins
+
 <p>Here I list some 3rd party jQuery plugins that I find useful when building websites.
 </p>
 <ol>

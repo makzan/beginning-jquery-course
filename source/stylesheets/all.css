@@ -157,3 +157,12 @@ li {
 @media screen and (min-width: 600px) {
   .hide-in-mobile {display: inline};
 }
+
+
+h2 > a,
+h3 > a,
+h4 > a
+{
+  opacity: 0.2;
+  margin-left: 0.1em;
+}

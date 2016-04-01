@@ -9,7 +9,9 @@ icon: exercise
 
 <p>This is lab 3 for the Beginning jQuery course.
 </p>
-<h2>More methods on selecting elements</h2>
+
+## More methods on selecting elements
+
 <p>Selecting elements is one of the key feature in jQuery. We can’t apply actions if we can’t select the elements we want. There are many more methods to select certain elements. Here is a list of them. Try to read them all so that you know the method to select your desired elements.
 </p>
 <ul>
@@ -27,7 +29,9 @@ icon: exercise
 </ul>
 <p>You can read the full list in the <a href="http://api.jquery.com/category/traversing/tree-traversal/">jQuery documentation</a>.
 </p>
-<h2>Knowing which key the user typed</h2>
+
+## Knowing which key the user typed
+
 <p>We have learnt how to handle user’s mouse and keyboard events with jQuery. For the keyboard event, we often need to know what key the user has typed. For example, we may want to know if the user press “Enter”, or the arrows key. <br>In this lab, try to find out the <code>keycode</code> for the “Enter” key, arrows key and the normal A-Z/0-9 keys.
 </p>
 <p>Every event actually comes with a variable of that event object. It contains some useful information for the event, such as the element that triggers it, the mouse position or the key code.
@@ -38,7 +42,9 @@ icon: exercise
   console.log(event); // log the keyboad event to console.
 });
 </pre>
-<h2>Adding and removing elements</h2>
+
+## Adding and removing elements
+
 <p>We used <a href="http://api.jquery.com/text"><code>text</code></a>, <a href="http://api.jquery.com/html"><code>html</code></a> and <a href="http://api.jquery.com/append"><code>append</code></a> to add elements and content dynamically. There is also a <a href="http://api.jquery.com/prepend"><code>prepend</code></a> that add content at the beginning of the selected element.
 </p>
 <p>For removal, we have the following methods:
@@ -50,14 +56,18 @@ icon: exercise
 </ul>
 <p>By learning these methods, we should be able to create or remove elements dynamically.
 </p>
-<h2>Demo of cloning, adding and removing elements</h2>
+
+## Demo of cloning, adding and removing elements
+
 <p>The following player’s score board code shows you how to use a template and clone to create a list of very similar items. Try following the code and create your own player’s board.
 </p>
 <p><a href="http://codepen.io/makzan/pen/RNEgvz">http://codepen.io/makzan/pen/RNEgvz</a>
 </p>
 <p>After following the code, try to use the same technique to create other list. For example, try to create a list of student marking for a high school. With both ascending and descending order.
 </p>
-<h2>Fetch data from server</h2>
+
+## Fetch data from server
+
 <p>The following code fetches data form the target server address.
 </p>
 <pre>var url = 'http://demo6508268.mockable.io/todos/';
@@ -102,7 +112,9 @@ $.getJSON(url, function(data) {
 </ol>
 <p><a href="http://codepen.io/makzan/pen/pvqrea">http://codepen.io/makzan/pen/pvqrea</a>
 </p>
-<h2>Storing data in browser</h2>
+
+## Storing data in browser
+
 <p>We can use the <code>[localStorage]</code> to store data in browser.
 </p>
 <p>The usage is very simple:
@@ -112,7 +124,9 @@ localStorage.setItem( 'key', 'value');
 // load
 localStorage.getItem( 'key' );
 </pre>
-<h2>More examples on nicely crafted focus states.</h2>
+
+## More examples on nicely crafted focus states
+
 <p>We learnt <code>addClass</code> and <code>removeClass</code> to toggle different states in JavaScript. CSS can reflect these states visually. Here are 2 examples that apply a beautiful and useful effects when the input field is focused.
 </p>
 <ul>

@@ -38,6 +38,9 @@ data.courses.courses.each do |course|
   proxy "/courses/#{slug}.html", "/courses/template.html", locals: { course_name: course, slug:slug }, ignore: true
 end
 
+# set :markdown_engine, :redcarpet
+set :markdown, auto_ids: true
+
 
 ###
 # Compass
