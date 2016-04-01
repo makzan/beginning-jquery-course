@@ -147,6 +147,8 @@ icon: notes
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest">https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest</a>
 </p>
 
+Please also note that new browser comes with a [Fetch API](https://developer.mozilla.org/en/docs/Web/API/Fetch_API), which Github has [a shim](https://github.com/github/fetch) for it. You can find [the Fetch example here](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch).
+
 ## JSON-P
 
 <p>JSON-P stands for <em>JSON with padding</em>.
