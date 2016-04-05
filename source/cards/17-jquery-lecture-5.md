@@ -7,8 +7,6 @@ icon: notes
 ---
 
 
-<p>{% if subscriber.first_name != blank %}<br>Hi {{ subscriber.first_name }},<br>{% else %}<br>Hello,<br>{% endif %}<br>
-</p>
 <p>This is lecture 5 of Beginning jQuery course. In this lecture, we explore how to use jQuery plugin.
 </p>
 
