@@ -4,50 +4,79 @@
   }
 </style>
 
-<div class="login">
-  <h2>Existing user</h2>
-  <form>
-    <p>Email:<br>
-    <input type='email' id='email'>
-    </p>
+<aside id='notes'>
+  <h2>Your Notes</h2>
+  <ul></ul>
+</aside>
+<script>
+  $(function() {
 
-    <p>
-    Password:<br>
-    <input type='password' id='password'>
-    </p>
+  // show all notes comment
+  var uid = (new UserData()).uid();
+  var allNotesRef = (new UserData()).firebaseRef('notes/' + uid);
+  allNotesRef.on('value', function(snapshot){
+    notes = snapshot.val();
 
-    <p><input type='submit' id='login-button' value='Login'></p>
-  </form>
+    // also show all notes in notes list.
+    if ($('#notes').length > 0) {
+      $('#notes').find('ul').empty();
+      for (hash in notes) {
+        var note = notes[hash];
+        $('#notes').find('ul').append("<li><a href='" + note.path + "'>" + note.path + "</a><p>" + note.note + "</p></li>")
+      }
+    }
+  });
+});
+</script>
+
+<main>
+
+  <div class="login">
+    <h2>Existing user</h2>
+    <form>
+      <p>Email:<br>
+      <input type='email' id='email'>
+      </p>
+
+      <p>
+      Password:<br>
+      <input type='password' id='password'>
+      </p>
+
+      <p><input type='submit' id='login-button' value='Login'></p>
+    </form>
 
 
-  <p><a href='#reset-password'>Reset Password</a></p>
-</div>
+    <p><a href='#reset-password'>Reset Password</a></p>
+  </div>
 
-<div class="signup default-hidden">
-  <h2>Create account</h2>
-  <form>
-    <p>Email:<br>
-    <input type='email' id='new-email'>
-    </p>
+  <div class="signup default-hidden">
+    <h2>Create account</h2>
+    <form>
+      <p>Email:<br>
+      <input type='email' id='new-email'>
+      </p>
 
-    <p>
-    Password:<br>
-    <input type='password' id='new-password'>
-    </p>
+      <p>
+      Password:<br>
+      <input type='password' id='new-password'>
+      </p>
 
-    <p><input type='submit' id='signup-button' value='Signup'></p>
-  </form>
+      <p><input type='submit' id='signup-button' value='Signup'></p>
+    </form>
 
-</div>
+  </div>
 
-<div class="profile-info">
-  <figure class='profile-pic'>
-    <img>
-  </figure>
-  <p>You’re logged in as <span class='email'></span>.</p>
-  <p>Display Name: <input type='text' id='display-name' placeholder='Loading...'> <small>(Auto-saved)</small></p>
-  <p><a href='#logout'>Logout</a></p>
-</div>
+  <div class="profile-info">
+    <figure class='profile-pic'>
+      <img>
+    </figure>
+    <p>You’re logged in as <span class='email'></span>.</p>
+    <p>Display Name: <input type='text' id='display-name' placeholder='Loading...'> <small>(Auto-saved)</small></p>
+    <p><a href='#logout'>Logout</a></p>
+  </div>
+</main>
+
 
 <script>
 

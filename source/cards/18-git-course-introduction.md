@@ -32,7 +32,7 @@ Version history:
 
 ## Book reference
 
-This short book provides only the essential techniques to help you get started using git version control. It’s a tips and tricks sharing from my 6 years experience.
+This short book provides only the essential techniques to help you get started using git version control. It’s a tips and tricks sharing from my 6 years experience using git.
 
 If you need to reference certain concepts of commands, I recommend reading the [Pro Git](https://progit.org) book, or its web format on [git-scm.com](http://git-scm.com/docs).
 

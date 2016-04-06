@@ -1,5 +1,6 @@
 //= require global
-//= require_tree .
+//= require md5
+//= require data
 
 
 
@@ -18,7 +19,6 @@ function moveFbRecord(oldRef, newRef) {
       });
   });
 }
-
 
 
 
