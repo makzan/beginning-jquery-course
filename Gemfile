@@ -9,3 +9,8 @@ gem "redcarpet"
 
 # For feed.xml.builder
 gem "builder", "~> 3.0"
+
+
+
+gem "nokogiri"
+gem "rest-client"
