@@ -64,7 +64,7 @@ $(selector).hide();
 
 ~~~
 $(selector).click(function(){
-  // code to handle the click
+  // code to handle the click
 });
 ~~~
 
@@ -82,3 +82,5 @@ There are several ways to improve the game.
 
 1. **Styling**. You can use CSS to make the game looks nicer. Try to style it to have a modern look.
 2. **Mobile Friendly**. By using the _viewport_ meta tag, you can make the game displays nicer in small screen. Moreover, you can handle _touch_ event for the “guess” and “restart” button clicking.
+
+

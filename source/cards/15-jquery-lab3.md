@@ -39,7 +39,7 @@ icon: exercise
 <p>We can inspect this event object to find more specific information that’s helpful to our project. In the following code, you can inspect each <code>keyup</code>event. Try to use the code to find out the keycode of “Enter”, arrow keys and A-Z/0-9.
 </p>
 <pre>$('input').keyup(function(event){
-  console.log(event); // log the keyboad event to console.
+  console.log(event); // log the keyboad event to console.
 });
 </pre>
 
@@ -72,7 +72,7 @@ icon: exercise
 </p>
 <pre>var url = 'http://demo6508268.mockable.io/todos/';
 $.getJSON(url, function(data) {
-  console.log(data);
+  console.log(data);
 });
 </pre>
 <p>By executing the code, you will get the following output in the console.
@@ -88,21 +88,21 @@ $.getJSON(url, function(data) {
 <p>You should be able to fetch data similar to mine:
 </p>
 <pre>{
-   "id": "578638460",
-   "first_name": "Seng Hin",
-   "gender": "male",
-   "last_name": "Mak",
-   "link": "https://www.facebook.com/senghinmak",
-   "locale": "en_US",
-   "name": "Mak Seng Hin",
-   "username": "senghinmak”
+   "id": "578638460",
+   "first_name": "Seng Hin",
+   "gender": "male",
+   "last_name": "Mak",
+   "link": "https://www.facebook.com/senghinmak",
+   "locale": "en_US",
+   "name": "Mak Seng Hin",
+   "username": "senghinmak”
 }
 </pre>
 <h3>Taking the code further</h3>
 <ol>
 	<li>Try to combine the techniques in the todo list demo and player score demo to create a todo list with a “done” state.</li>
 </ol>
-<p>  You may use the following API as initial sample data.
+<p>  You may use the following API as initial sample data.
 </p>
 <p><a href="http://demo6508268.mockable.io/v2/todos/">http://demo6508268.mockable.io/v2/todos/</a>
 </p>

@@ -39,3 +39,5 @@ Please don’t hesitate to ask any questions and queries. You can reach me by re
 
 <img src="http://mak.la/signature" width="121" height="54" style="width: 121px; height: 54px;"><br>
 —Thomas Mak
+
+
