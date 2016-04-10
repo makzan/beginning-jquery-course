@@ -14,7 +14,7 @@ links.each do |link|
   title = page.css("h2").to_s.gsub(/<\/h2>/,"").gsub(/<h2[^>]*>/,"")
 
   content = page.css(".formatted_content > div").to_s
-  content = content.gsub(/<br>/,"\n").gsub(/<\/?div>/,"").gsub(/<\/a>/,"").gsub(/<a[^>]*>/,"").gsub("&lt;", "<").gsub("&gt;",">")
+  content = content.gsub(/<br>/,"\n").gsub(/<\/?div>/,"").gsub(/<\/a>/,"").gsub(/<a[^>]*>/,"").gsub("&lt;", "<").gsub("&gt;",">").gsub("  ","  ")
 
   # puts title
   # puts content

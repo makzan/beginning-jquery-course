@@ -21,25 +21,25 @@ icon: notes
 <ol>
 	<li>Register a plugin:
 	<pre>$.fn.pluginName = function() {
-  // $(this) refers to the selected elements
-  return this;
+  // $(this) refers to the selected elements
+  return this;
 };
 	</pre></li>
 	<li>Plugin may take simple parameters:
 	<pre>$.fn.pluginName = function(param1, param2) {
-  // your code goes here.
-  return this;
+  // your code goes here.
+  return this;
 };
 	</pre></li>
 	<li>Plugin may take options as an object:
 	<pre>$.fn.pluginName = function(options) {
-  // default settings
-  var settings = $.extend({
-    foo: ‘bar',
-    foo2: 123,
-  }, options );
-  // your code goes here.
-  return this;
+  // default settings
+  var settings = $.extend({
+    foo: ‘bar',
+    foo2: 123,
+  }, options );
+  // your code goes here.
+  return this;
 };
 	</pre></li>
 </ol>
@@ -59,11 +59,11 @@ icon: notes
 <p>1) The first step would be putting all the existing jQuery slideshow code into a plugin scope.
 </p>
 <pre>$.fn.makeSlideshow = function(options) {
-  // get all images
-  var images = $(this).find('li');
-  // existing slideshow code.
-  // jQuery plugin’s practice: return this.
-  return this;
+  // get all images
+  var images = $(this).find('li');
+  // existing slideshow code.
+  // jQuery plugin’s practice: return this.
+  return this;
 };
 </pre>
 <p>Then we call our plugin by the following code:
@@ -73,23 +73,23 @@ icon: notes
 <p>2) Assuming now we want to add additional options. For instance, allowing user to customize theme option and slideshow interval.
 </p>
 <pre>$.fn.makeSlideshow = function(options) {
-  // default settings
-  var settings = $.extend({
-    theme: 'theme-a',
-    interval: 3000,
-  }, options );
-  // apply theme
-  $(this)
-  .removeClass().addClass('slideshow').addClass(settings.theme);
-  setInterval(nextSlide, settings.interval);
-  // existing slideshow code goes here.
+  // default settings
+  var settings = $.extend({
+    theme: 'theme-a',
+    interval: 3000,
+  }, options );
+  // apply theme
+  $(this)
+  .removeClass().addClass('slideshow').addClass(settings.theme);
+  setInterval(nextSlide, settings.interval);
+  // existing slideshow code goes here.
 };
 </pre>
 <p>We can now call our slideshow plugin with options.
 </p>
 <pre>$('#slideshow').makeSlideshow({
-  theme: 'theme-b',
-  interval: 1000
+  theme: 'theme-b',
+  interval: 1000
 });
 </pre>
 <p>You may find the final code example in the following URL. It also includes ‘theme-a’ and ‘theme-b’ defined in the CSS style.
@@ -106,28 +106,28 @@ icon: notes
 <p>Here is a code demonstrating how we use sortable in real-world project. In this example code, which I extracted from my client project, the server-side renders a list of content and lets client-side re-ordering the list. The new order is then sent to server to save into database by using jQuery’s ajax post.
 </p>
 <pre>&amp;lt;div id='sortable'&amp;gt;
-  &amp;lt;%- @notes.order('rank').each do |note| %&amp;gt;
-    &amp;lt;div class='note' data-note-id='&amp;lt;%= note.id %&amp;gt;'&amp;gt;
-      &amp;lt;div class='dragging-area'&amp;gt;☰&amp;lt;/div&amp;gt;
-      &amp;lt;%= note.content %&amp;gt;
-    &amp;lt;/div&amp;gt;
-  &amp;lt;%- end %&amp;gt;
+  &amp;lt;%- @notes.order('rank').each do |note| %&amp;gt;
+    &amp;lt;div class='note' data-note-id='&amp;lt;%= note.id %&amp;gt;'&amp;gt;
+      &amp;lt;div class='dragging-area'&amp;gt;☰&amp;lt;/div&amp;gt;
+      &amp;lt;%= note.content %&amp;gt;
+    &amp;lt;/div&amp;gt;
+  &amp;lt;%- end %&amp;gt;
 &amp;lt;/div&amp;gt;
 </pre>
 <p>And the JavaScript that enable the sorting and posts new orders to server:
 </p>
 <pre>$('#sortable').sortable({
-  handle: '.dragging-area',
-  update: function( event, ui ) {
-    var array = [];
-    $('#sortable').children().each(function(){
-      array.push($(this).data('noteId'));
-    });
-    $.post('/notes/reorder', {new_order:array}, function(data){
-      // server-side handles the new order and update the order rank in database.
-      console.log(data);
-    });
-  },
+  handle: '.dragging-area',
+  update: function( event, ui ) {
+    var array = [];
+    $('#sortable').children().each(function(){
+      array.push($(this).data('noteId'));
+    });
+    $.post('/notes/reorder', {new_order:array}, function(data){
+      // server-side handles the new order and update the order rank in database.
+      console.log(data);
+    });
+  },
 });
 </pre>
 <p>Please note that the code contains server-side script (Ruby) and it probably doesn’t work in your browser without a server running. The purpose of the code is to demonstrate how it works.

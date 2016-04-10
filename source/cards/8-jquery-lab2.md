@@ -26,10 +26,10 @@ icon: exercise
 <p>Given the following style in CSS.
 </p>
 <pre>input.error {
-  border: 1px solid FIREBRICK;
-  box-shadow: 0 0 4px FIREBRICK;
-  background: WHITE;
-  color: BLACK;
+  border: 1px solid FIREBRICK;
+  box-shadow: 0 0 4px FIREBRICK;
+  background: WHITE;
+  color: BLACK;
 }
 </pre>
 <p>We can then toggle the error state by the following jQuery code.
@@ -54,8 +54,8 @@ $('input').removeClass('error’);
 </p>
 <pre>// Remove any error when form changes.
 $('form input').keydown(function(){
-  $('input').removeClass('error');
-  $('.error-message').hide();
+  $('input').removeClass('error');
+  $('.error-message').hide();
 });
 </pre>
 <p>Demo: <a href="http://codepen.io/makzan/pen/OPBrym">http://codepen.io/makzan/pen/OPBrym</a>

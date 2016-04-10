@@ -24,11 +24,11 @@ Here is the milestones to build our HTML5 game website.
 
 1. Create a single page website that show the title and banner of the games we have made. Clicking on the title may link to the Codepen of the game.
 2. Create a 2 pages hierarchy for our website:
-    1. The home page is the index of our games.
-    2. Clicking on any game goes to the game page. Here is how the game page works:
-        - The page gets the title and Codepen URL from the query string. (e.g. game.php?title=ABC&amp;url=https://codepen.io/makzan/blahblahblah)
-        - The page shows the game title and a link to go back to home page.
-        - The page uses iframe to embed the Codepen-written HTML5 games into the page.
+    1. The home page is the index of our games.
+    2. Clicking on any game goes to the game page. Here is how the game page works:
+        - The page gets the title and Codepen URL from the query string. (e.g. game.php?title=ABC&amp;url=https://codepen.io/makzan/blahblahblah)
+        - The page shows the game title and a link to go back to home page.
+        - The page uses iframe to embed the Codepen-written HTML5 games into the page.
 3. Database to create and store game.
 4. HTTP auth.
 5. Database and $_session PHP auth.

@@ -64,7 +64,7 @@ $(selector).hide();
 
 ~~~
 $(selector).click(function(){
-  // code to handle the click
+  // code to handle the click
 });
 ~~~
 

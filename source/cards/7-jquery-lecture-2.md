@@ -49,7 +49,7 @@ To do so, we select the new-mail element—let’s assume it’s #new-mail—and
 Of course, we need to show the dialog only after the user clicks on the compose button. So here is the click event handler.
 
 <pre>$('#compose-button').click(function(){
-  $('#new-mail').show();
+  $('#new-mail').show();
 });
 </pre>
 We will cover the event handling in lecture 3.

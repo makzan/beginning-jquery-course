@@ -14,14 +14,14 @@ Here are the steps to create the Count game in HTML with jQuery.
 
 1. Define the game DIV with a fixed dimension. (We handle flexible dimension later)
 2. Define a mock game elements. In this game, they are the numbered box.
-    - Each one has a `data-number` to store the value of the box.
-    - Each box also display the number value.
+    - Each one has a `data-number` to store the value of the box.
+    - Each box also display the number value.
 3. Use jQuery to select each box and randomize the position on the screen.
 4. Create a function to handle the box clicking.
 5. Create a function to generate new box into the game.
 6. Create a new scene for the game over.
-    - At this step, you may also wants to make the game element container one of the scene.
-    - You can do that by using `class="scene"`
+    - At this step, you may also wants to make the game element container one of the scene.
+    - You can do that by using `class="scene"`
 7. We are going to create scene transition and switching. Mark the default scene, the game container, with `.active` class.
 8. Time to style the `.scene` and `.active` to make it functional.
 9. Define a game over function that shows the game over scene.

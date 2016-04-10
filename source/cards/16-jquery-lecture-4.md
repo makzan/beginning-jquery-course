@@ -118,10 +118,10 @@ icon: notes
 <p>which is actually a short hand of:
 </p>
 <pre>$.ajax({
-  dataType: "json",
-  url: url,
-  data: data,
-  success: success
+  dataType: "json",
+  url: url,
+  data: data,
+  success: success
 });
 </pre>
 <p>All the short hand methods:
@@ -165,7 +165,7 @@ Please also note that new browser comes with a [Fetch API](https://developer.moz
 ## Inspecting the responses
 
 <pre>$.getJSON(url, function(data){
-  console.log(data);
+  console.log(data);
 });
 </pre>
 <p>Usually we want to inspect the returned data before we know how to make use of the API.

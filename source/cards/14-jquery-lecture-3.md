@@ -21,18 +21,18 @@ icon: notes
 <p>A simple rule is JavaScript’s <code>this</code> refers to the one that calls the function. For example:
 </p>
 <pre>function foo() {
-  console.log(this);
+  console.log(this);
 }
 window.foo(); // `this` refers to window.
 var objectA = {
-  hello: function(){
-    console.log(this);
-  }
+  hello: function(){
+    console.log(this);
+  }
 };
 objectA.hello(); // `this` refers to `objectA`.
 objectA.hello.call(window); // ** `this` refers to `window`.
 $('#input').keydown(function(){
-  console.log(this);  // `this` refers to the $('#input').
+  console.log(this);  // `this` refers to the $('#input').
 });
 </pre>
 <p>** Note that we can use the <code>call</code> or <code>apply</code> method to change the context of any function calling
@@ -62,8 +62,8 @@ $('#input').keydown(function(){
 <p>Usage example:
 </p>
 <pre>$('selector').each(function(){
-  // each of the matched element
-  $(this).something();
+  // each of the matched element
+  $(this).something();
 });
 </pre>
 <h2>Setting and Getting HTML attributes</h2>
