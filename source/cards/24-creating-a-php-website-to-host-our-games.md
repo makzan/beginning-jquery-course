@@ -34,3 +34,6 @@ Here is the milestones to build our HTML5 game website.
 5. Database and $_session PHP auth.
 
 <script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:62.5% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_76cv0gz93v seo=false videoFoam=true" style="height:100%;width:100%">&amp;nbsp;</div></div></div>
+
+
+<script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:62.5% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_3uvqwbtaas seo=false videoFoam=true" style="height:100%;width:100%">&amp;nbsp;</div></div></div>
