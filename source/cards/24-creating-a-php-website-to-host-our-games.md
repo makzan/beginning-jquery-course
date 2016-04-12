@@ -26,14 +26,14 @@ Here is the milestones to build our HTML5 game website.
 2. Create a 2 pages hierarchy for our website:
     1. The home page is the index of our games.
     2. Clicking on any game goes to the game page. Here is how the game page works:
-        - The page gets the title and Codepen URL from the query string. (e.g. game.php?title=ABC&amp;url=https://codepen.io/makzan/blahblahblah)
+        - The page gets the title and Codepen URL from the query string. (e.g. game.php?title=ABC&url=https://codepen.io/makzan/blahblahblah)
         - The page shows the game title and a link to go back to home page.
         - The page uses iframe to embed the Codepen-written HTML5 games into the page.
 3. Database to create and store game.
 4. HTTP auth.
 5. Database and $_session PHP auth.
 
-<script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:62.5% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_76cv0gz93v seo=false videoFoam=true" style="height:100%;width:100%">&amp;nbsp;</div></div></div>
+<script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:62.5% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_76cv0gz93v seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
 
 
-<script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:62.5% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_3uvqwbtaas seo=false videoFoam=true" style="height:100%;width:100%">&amp;nbsp;</div></div></div>
+<script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:62.5% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_3uvqwbtaas seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>

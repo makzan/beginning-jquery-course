@@ -70,7 +70,7 @@ icon: notes
 
 ### Facebook Graph API
 
-<p>The base of the API is <code>&amp;lt;a href="https://graph.facebook.com"&amp;gt;https://graph.facebook.com&amp;lt;/a&amp;gt;</code>.
+<p>The base of the API is <code>&lt;a href="https://graph.facebook.com"&gt;https://graph.facebook.com&lt;/a&gt;</code>.
 </p>
 <ul>
 	<li>for page:</li>

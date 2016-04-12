@@ -62,7 +62,7 @@ Here is a full demo on the email composing form’s toggling HTML and JavaScript
 
 Given the following example:
 
-<pre>&amp;lt;p&amp;gt;Enjoy the rest of &amp;lt;span class='the-day'&amp;gt;the day&amp;lt;/span&amp;gt;.&amp;lt;/p&amp;gt;
+<pre>&lt;p&gt;Enjoy the rest of &lt;span class='the-day'&gt;the day&lt;/span&gt;.&lt;/p&gt;
 </pre>
 We would like to dynamically change the wording “the day” into the week day name. For example, we want to show “Enjoy the rest of your Friday”
 
