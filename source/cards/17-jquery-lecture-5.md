@@ -105,15 +105,18 @@ icon: notes
 </p>
 <p>Here is a code demonstrating how we use sortable in real-world project. In this example code, which I extracted from my client project, the server-side renders a list of content and lets client-side re-ordering the list. The new order is then sent to server to save into database by using jQuery’s ajax post.
 </p>
-<pre>&amp;lt;div id='sortable'&amp;gt;
-  &amp;lt;%- @notes.order('rank').each do |note| %&amp;gt;
-    &amp;lt;div class='note' data-note-id='&amp;lt;%= note.id %&amp;gt;'&amp;gt;
-      &amp;lt;div class='dragging-area'&amp;gt;☰&amp;lt;/div&amp;gt;
-      &amp;lt;%= note.content %&amp;gt;
-    &amp;lt;/div&amp;gt;
-  &amp;lt;%- end %&amp;gt;
-&amp;lt;/div&amp;gt;
-</pre>
+
+```
+<div id='sortable'>
+  <%- @notes.order('rank').each do |note| %>
+    <div class='note' data-note-id='<%= note.id %>'>
+      <div class='dragging-area'>☰</div>
+      <%= note.content %>
+    </div>
+  <%- end %>
+</div>
+```
+
 <p>And the JavaScript that enable the sorting and posts new orders to server:
 </p>
 <pre>$('#sortable').sortable({
