@@ -36,6 +36,7 @@ page "cards/*", layout: :blog
 data.courses.courses.each do |course|
   slug = course.gsub(/\s/,'-').downcase
   proxy "/courses/#{slug}.html", "/courses/template.html", locals: { course_name: course, slug:slug }, ignore: true
+  proxy "/courses/#{slug}.json", "/courses/template.json", locals: { course_name: course, slug:slug }, ignore: true
 end
 
 # set :markdown_engine, :redcarpet

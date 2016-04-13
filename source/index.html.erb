@@ -1,15 +1,15 @@
+<article class="no-notes">
+  <h1>Web Design Courses</h1>
+  <ul class='card-list'>
+    <% data.courses.courses.each do |course| %>
+      <li>
+        <%= link_to course, "courses/#{course.gsub(/\s/,'-').downcase}.html" %>
+      </li>
+    <% end %>
 
-<h1>Web Design Courses</h1>
-<ul class='card-list'>
-  <% data.courses.courses.each do |course| %>
-    <li>
-      <%= link_to course, "courses/#{course.gsub(/\s/,'-').downcase}.html" %>
-    </li>
-  <% end %>
-
-  <li><%= link_to "About MWD", "/1-about.html" %></li>
-</ul>
-
+    <li><%= link_to "About MWD", "/1-about.html" %></li>
+  </ul>
+</article>
 
 <script>
   // reset current course

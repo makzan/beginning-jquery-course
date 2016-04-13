@@ -1,28 +1,30 @@
-<h1><%= course_name %> Course</h1>
+<article class='no-notes'>
+  <h1><%= course_name %> Course</h1>
 
-<style>
-  ul.card-list {
-    list-style: none;
-  }
-</style>
-<ul class='card-list'>
-  <% cids = data.courses[course_name].split(',') %>
-  <% cids.each do |id| %>
-    <% article = sitemap.where(cid: id.to_i).first %>
-    <li>
-      <%= card_icon(article) %>
+  <style>
+    ul.card-list {
+      list-style: none;
+    }
+  </style>
+  <ul class='card-list'>
+    <% cids = data.courses[course_name].split(',') %>
+    <% cids.each do |id| %>
+      <% article = sitemap.where(cid: id.to_i).first %>
+      <li>
+        <span class='card-icon'><%= card_icon(article) %></span>
 
-      <%= link_to article.title, article %>
-      <% if !article.data.summary.nil? %>
-        —<%= article.data.summary %>
-      <% end %>
+        <%= link_to article.title, article %>
+        <% if !article.data.summary.nil? %>
+          —<%= article.data.summary %>
+        <% end %>
 
-    </li>
-  <% end %>
-</ul>
+      </li>
+    <% end %>
+  </ul>
+
+</article>
 
 <script>
   // save current course.
   localStorage["current-course"] = "<%= course_name %>";
 </script>
-

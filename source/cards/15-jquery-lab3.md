@@ -88,14 +88,14 @@ $.getJSON(url, function(data) {
 <p>You should be able to fetch data similar to mine:
 </p>
 <pre>{
-   "id": "578638460",
-   "first_name": "Seng Hin",
-   "gender": "male",
-   "last_name": "Mak",
-   "link": "https://www.facebook.com/senghinmak",
-   "locale": "en_US",
-   "name": "Mak Seng Hin",
-   "username": "senghinmak”
+  "id": "578638460",
+  "first_name": "Seng Hin",
+  "gender": "male",
+  "last_name": "Mak",
+  "link": "https://www.facebook.com/senghinmak",
+  "locale": "en_US",
+  "name": "Mak Seng Hin",
+  "username": "senghinmak”
 }
 </pre>
 <h3>Taking the code further</h3>

@@ -2,7 +2,7 @@
 cid: 28
 date: 2016-04-12
 title: return false and e.preventDefault
-link: http://stackoverflow.com/a/1357151
+link: http://stackoverflow.com/a/1357151
 tags: link, jquery
 icon: link
 layout: link

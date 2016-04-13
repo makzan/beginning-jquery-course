@@ -1,8 +1,4 @@
 <% wrap_layout :layout do %>
-  <article id='post' data-cid="<%= current_page.data.cid %>">
-    <h1><%= card_icon(current_page) %> <%= current_page.data.title %></h1>
-    <%= yield %>
-  </article>
 
   <script>
     // header breadcrumb
@@ -14,6 +10,46 @@
       $('.current-course-breadcrumb').html(" > <a href='" + url + "'>" + currentCourse + "</a>");
     }
   </script>
+
+  <aside class='toc hide-in-mobile'>
+    <h2>Table of Content</h2>
+    <ul id='toc'></ul>
+    <div class='template' style='display:none;'>
+      <li><span class='card-icon'></span><a href=''></a></li>
+    </div>
+    <small title="Thank you!">• End of Course •</small>
+  </aside>
+  <article id='post' data-cid="<%= current_page.data.cid %>">
+    <h1><%= card_icon(current_page) %> <%= current_page.data.title %></h1>
+    <%= yield %>
+  </article>
+
+
+  <script>
+    var currentTitle = "<%= current_page.data.title %>";
+
+    if (currentCourse === undefined) {
+      $('aside.toc').hide();
+      $('.course-page').addClass('no-aside');
+      $('header').addClass('no-aside');
+    } else {
+      var jsonURL = "/courses/" + currentCourse.replace(/\s/g,'-').toLowerCase() + ".json";
+      $.getJSON(jsonURL, function(data){
+        $.each(data.links, function(){
+          var clone = $('.template li').clone();
+          clone.find('.card-icon').html(this.icon);
+          clone.find('a').attr('href', this.url).text(this.title);
+
+          if (this.title === currentTitle) {
+            clone.addClass('active');
+          }
+
+          $('#toc').append(clone);
+        });
+      });
+    }
+  </script>
+
 
   <script src='/javascripts/after-post.js'></script>
 <% end %>
