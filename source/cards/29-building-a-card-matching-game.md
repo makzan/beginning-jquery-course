@@ -2,7 +2,7 @@
 cid: 29
 date: 2016-04-16
 title: Building a card matching game in jQuery and CSS3
-icon: note
+icon: notes
 ---
 
 In this example, we will build a card-matching game.
