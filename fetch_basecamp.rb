@@ -3,7 +3,19 @@ require 'nokogiri'
 require 'rest_client'
 
 def clean_formatted_content(content)
-  return content.gsub(/<br>/,"\n").gsub(/<\/?div>/,"").gsub(/<\/a>/,"").gsub(/<a[^>]*>/,"").gsub("&lt;", "<").gsub("&gt;",">").gsub("&amp;","&").gsub("  ","  ").gsub(" ","")
+  # clean elements
+  content = content.gsub(/<br>/,"\n").gsub(/<\/?div>/,"").gsub(/<\/a>/,"").gsub(/<a[^>]*>/,"")
+
+  # list
+  content = content.gsub(/<\/?ul>/,"").gsub(/<li>/, "- ").gsub(/<\/li>/, "")
+
+  # pre code block
+  content = content.gsub(/<\/?pre>/,"")
+
+  # special character
+  content = content.gsub("&lt;", "<").gsub("&gt;",">").gsub("&amp;","&").gsub("  ","  ").gsub(" ","")
+
+  return content
 end
 
 
@@ -18,7 +30,7 @@ links.each do |link|
   page = Nokogiri::HTML(RestClient.get(link))
   title = page.css("h2").to_s.gsub(/<\/h2>/,"").gsub(/<h2[^>]*>/,"")
 
-  content = page.css(".formatted_content > div").to_s
+  content = page.css(".formatted_content > *").to_s
   content = clean_formatted_content(content)
 
   # puts title
