@@ -1,8 +1,8 @@
 ---
-cid:26
+cid: 26
 date: 2016-04-10
-title:jQuery ready function
-icon:notes
+title: jQuery ready function
+icon: notes
 ---
 
 What is jQuery ready function?
