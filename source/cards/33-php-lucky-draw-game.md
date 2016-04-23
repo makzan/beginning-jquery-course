@@ -5,7 +5,7 @@ title: Building lucky draw game with PHP
 icon: exercise
 ---
 
-You can find the source code here: https://ide.c9.io/makzan/youthskills-php-2
+You can find the source code here: [https://ide.c9.io/makzan/youthskills-php-2](https://ide.c9.io/makzan/youthskills-php-2)
 
 What is the game about?
 

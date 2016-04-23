@@ -86,6 +86,7 @@ set :markdown, auto_ids: true
 # Methods defined in the helpers block are available in templates
 helpers do
   def card_icon(card)
+    return "" if card.nil?
     if !card.data.icon.nil?
       return "\xF0\x9F\x93\xA2" if card.data.icon == 'annoncement'
       return "&#x1F4D6;" if card.data.icon == 'notes'

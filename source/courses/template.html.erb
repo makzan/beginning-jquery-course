@@ -10,6 +10,7 @@
     <% cids = data.courses[course_name].split(',') %>
     <% cids.each do |id| %>
       <% article = sitemap.where(cid: id.to_i).first %>
+      <% next if article.nil? %>
       <li>
         <span class='card-icon'><%= card_icon(article) %></span>
 
