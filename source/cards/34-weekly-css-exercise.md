@@ -13,7 +13,7 @@ Just try something new in CSS and send me your experiment result.
 
 p.s. You may use Codepen.io to quickly create CSS effects online.
 
-- Thomas Mak
+– Thomas Mak
 
 
 
