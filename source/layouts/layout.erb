@@ -101,8 +101,6 @@
     var user = (new UserData()).getAuth();
     if (user !== null) {
       $('#open-chat-with-thomas').show();
-    } else {
-      alert("Session expired. Please refresh ")
     }
   };
   showOpenChatIfAvailable();
@@ -110,7 +108,11 @@
   var handleChatWithThomas = function() {
     // chat with Thomas
     $('[href="#open-chat"]').click(function(){
-      Intercom('show');
+      if (user !== null) {
+        Intercom('show');
+      } else {
+        alert("Session expired. Please refresh.")
+      }
       return false;
     });
   };
