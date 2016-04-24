@@ -101,6 +101,8 @@
     var user = (new UserData()).getAuth();
     if (user !== null) {
       $('#open-chat-with-thomas').show();
+    } else {
+      alert("Session expired. Please refresh ")
     }
   };
   showOpenChatIfAvailable();
