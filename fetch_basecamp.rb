@@ -4,7 +4,7 @@ require 'rest_client'
 
 def clean_formatted_content(content)
   # clean elements
-  content = content.gsub(/<br>/,"\n").gsub(/<\/?div>/,"").gsub(/<\/a>/,"").gsub(/<a[^>]*>/,"")
+  content = content.gsub(/<br>/,"\n").gsub(/<\/?div>/,"").gsub(/<\/a>/,"").gsub(/<a[^>]*>/,"").gsub(/<\/?strong>/,"").gsub(/<\/?em>/,"")
 
   # list
   content = content.gsub(/<\/?ul>/,"").gsub(/<li>/, "- ").gsub(/<\/li>/, "")
