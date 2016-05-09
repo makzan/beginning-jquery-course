@@ -16,7 +16,7 @@ You’ll need to have basic HTML and CSS skills to learn jQuery. If you’re new
 
 ## Setting up development environments
 
-Any operation system works fine with this course. We’ll need a modern browser to test the features. [Chrome](http://google.com/chrome/), [Firefox](https://www.mozilla.org/en-US/firefox/developer/) or Safari on Mac works fine.
+Any operation system works fine with this course. We’ll need a modern browser to test the features. [Chrome](https://www.mozilla.org/en-US/firefox/developer/) or Safari on Mac works fine.
 
 Then we need text editor to code our web page. Any code editor works. I prefer BBEdit or Atom. But it’s your choice.
 
@@ -32,7 +32,7 @@ For web IDE, I recommend [Cloud9](https://c9.io) which gives you a browser-based
 
 ## Online references and helps
 
-If you need reference on using the web standards, I recommend checking the [Mozilla Developer Network](https://developer.mozilla.org/) for reference and [StackOverflow](http://stackoverflow.com/questions/tagged/javascript) for questions and issues.
+If you need reference on using the web standards, I recommend checking the [Mozilla Developer Network](http://stackoverflow.com/questions/tagged/javascript) for questions and issues.
 
 Please don’t hesitate to ask any questions and queries. You can reach me by replying this email or find me on twitter ([@Makzan](https://twitter.com/intent/tweet?text=@makzan)).
 

@@ -47,14 +47,14 @@ $('#input').keydown(function(){
 <h2>Event handling</h2>
 <p>Handling events is one of the most common tasks when writing jQuery. We often need to respond to user’s actions and provide appropriate feedbacks. The following jQuery’s events handling documentation provides a getting started guide.
 </p>
-<p><a href="http://learn.jquery.com/events/handling-events/">http://learn.jquery.com/events/handling-events/</a>
+<p><a href="http://learn.jquery.com/events/handling-events/</a>
 </p>
 <h3>Delegation</h3>
-<p>The <a href="http://api.jquery.com/live/"><code>live</code> method</a> was in older version but it got deprecated and finally removed from version 1.9. Similar functionality can be done via the <a href="http://api.jquery.com/delegate/"><code>delegate</code> method</a>.
+<p>The <a href="http://api.jquery.com/delegate/"><code>delegate</code> method</a>.
 </p>
-<p><a href="http://api.jquery.com/live/">http://api.jquery.com/live/</a>
+<p><a href="http://api.jquery.com/live/</a>
 </p>
-<p><a href="http://api.jquery.com/delegate/">http://api.jquery.com/delegate/</a>
+<p><a href="http://api.jquery.com/delegate/</a>
 </p>
 <h2>Looping with jQuery each</h2>
 <p>In some cases, we need to loop through all the selected elements and apply logic on it. We can use the <a href="http://api.jquery.com/each/"><code>each</code> method</a>.
@@ -74,7 +74,7 @@ $('#input').keydown(function(){
 </p>
 <p>I created <a href="http://codepen.io/makzan/pen/vEQddR">an example</a> that demonstrates the techniques listed in this lecture. It is a list of inputs that user input names into it. User can add more inputs by clicking the “+” button. There is a confirmation dialog when submitting the form.
 </p>
-<p><a href="http://codepen.io/makzan/pen/vEQddR">http://codepen.io/makzan/pen/vEQddR</a>
+<p><a href="http://codepen.io/makzan/pen/vEQddR</a>
 </p>
 <h2>Summary</h2>
 <p>After going through the links and code examples listed in this lecture, you should be able to handle different events.

@@ -45,7 +45,7 @@ icon: exercise
 
 ## Adding and removing elements
 
-<p>We used <a href="http://api.jquery.com/text"><code>text</code></a>, <a href="http://api.jquery.com/html"><code>html</code></a> and <a href="http://api.jquery.com/append"><code>append</code></a> to add elements and content dynamically. There is also a <a href="http://api.jquery.com/prepend"><code>prepend</code></a> that add content at the beginning of the selected element.
+<p>We used <a href="http://api.jquery.com/prepend"><code>prepend</code></a> that add content at the beginning of the selected element.
 </p>
 <p>For removal, we have the following methods:
 </p>
@@ -61,7 +61,7 @@ icon: exercise
 
 <p>The following player’s score board code shows you how to use a template and clone to create a list of very similar items. Try following the code and create your own player’s board.
 </p>
-<p><a href="http://codepen.io/makzan/pen/RNEgvz">http://codepen.io/makzan/pen/RNEgvz</a>
+<p><a href="http://codepen.io/makzan/pen/RNEgvz</a>
 </p>
 <p>After following the code, try to use the same technique to create other list. For example, try to create a list of student marking for a high school. With both ascending and descending order.
 </p>
@@ -81,9 +81,9 @@ $.getJSON(url, function(data) {
 </p>
 <p>You can view the demo in the following URL:
 </p>
-<p><a href="http://codepen.io/makzan/pen/wBRqKz">http://codepen.io/makzan/pen/wBRqKz</a>
+<p><a href="http://codepen.io/makzan/pen/wBRqKz</a>
 </p>
-<p>Now try to fetch your Facebook profile picture from the Facebook’s graph API: <br><a href="https://graph.facebook.com/(Your">https://graph.facebook.com/(Your</a> Facebook username)
+<p>Now try to fetch your Facebook profile picture from the Facebook’s graph API: <br><a href="https://graph.facebook.com/(Your</a> Facebook username)
 </p>
 <p>You should be able to fetch data similar to mine:
 </p>
@@ -104,13 +104,13 @@ $.getJSON(url, function(data) {
 </ol>
 <p>  You may use the following API as initial sample data.
 </p>
-<p><a href="http://demo6508268.mockable.io/v2/todos/">http://demo6508268.mockable.io/v2/todos/</a>
+<p><a href="http://demo6508268.mockable.io/v2/todos/</a>
 </p>
 <ol>
 	<li>By combining the techniques we learn from lecture 3 and previous lab, we could build the todo list that user can add items to it.</li>
 	<li>Latest browsers support client-side persistent storage. Try to use the local storage to store the todo list.<br>I created a half-finish example that’s able to create new todo and save to the local store. It loads data from server at the first time opening the web page. You may find the code here and improve it:</li>
 </ol>
-<p><a href="http://codepen.io/makzan/pen/pvqrea">http://codepen.io/makzan/pen/pvqrea</a>
+<p><a href="http://codepen.io/makzan/pen/pvqrea</a>
 </p>
 
 ## Storing data in browser

@@ -320,7 +320,10 @@ ul#toc li.active a{
 }
 
 
-
+#post ul,
+#post ol {
+  margin-left: 1.5em;
+}
 
 
 #notes {
@@ -349,4 +352,23 @@ ul#toc li.active a{
     width: 100%;
     float: right;
   }
+}
+
+
+.attachment__size {
+  display: none;
+}
+
+figcaption {
+  font-size: 0.8em;
+  text-align: center;
+  margin-top: -0.3em;
+  margin-bottom: 1.5em;
+  color: #333;
+}
+
+
+.wistia_responsive_padding {
+  margin-top: 1em;
+  margin-bottom: 1em;
 }

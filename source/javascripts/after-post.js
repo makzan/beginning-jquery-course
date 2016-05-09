@@ -1,5 +1,14 @@
 (function($){
 
+  // remove and clean-up basecamp figure link
+  $('.attachment__size').remove();
+  $('.attachment__link.unstyled').each(function(){
+    var text = $(this).text();
+    $(this).parents('figcaption').text(text);
+    $(this).replaceWith($(this).find('img'));
+  });
+
+
   // header link
   $(function() {
     return $("h2, h3, h4, h5, h6").each(function(i, el) {
@@ -12,7 +21,6 @@
       }
     });
   });
-
 
   // generate paragraph hash
   $(function() {
@@ -92,6 +100,47 @@
 
 
   });
+
+
+
+  // current course, title and site-map
+  if (currentCourse === undefined) {
+    $('aside.toc').hide();
+    $('.course-page').addClass('no-aside');
+    $('header').addClass('no-aside');
+  } else {
+    var jsonURL = "/courses/" + currentCourse.replace(/\s/g,'-').toLowerCase() + ".json";
+    $.getJSON(jsonURL, function(data){
+
+      var next = undefined;
+      var hasFoundCurrent = undefined;
+
+      $.each(data.links, function(){
+        var clone = $('.template li').clone();
+        clone.find('.card-icon').html(this.icon);
+        clone.find('a').attr('href', this.url).text(this.title);
+
+        // next
+        if (hasFoundCurrent && next===undefined) {
+          next = this;
+          // inject "next" link
+          var link = $("<a>");
+          link.text("Next → " + next.title);
+          link.attr('href', next.url);
+          $('#post').append(link);
+        }
+
+        // current
+        if (this.title === currentTitle) {
+          clone.addClass('active');
+          hasFoundCurrent = true;
+        }
+
+
+        $('#toc').append(clone);
+      });
+    });
+  }
 
 
 

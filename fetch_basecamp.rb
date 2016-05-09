@@ -4,13 +4,34 @@ require 'rest_client'
 
 def clean_formatted_content(content)
   # clean elements
-  content = content.gsub(/<br>/,"\n").gsub(/<\/?div>/,"").gsub(/<\/a>/,"").gsub(/<a[^>]*>/,"").gsub(/<\/?strong>/,"").gsub(/<\/?em>/,"")
+  content = content.gsub(/<br>/,"\n").gsub(/<\/?div>/,"")
+
+  # a href
+  # content = content.gsub(/<\/a>/,"").gsub(/<a[^>]*>/,"")
+  content = content.gsub(/<a class="autolinked".*>(.*)<\/a>/,'\1')
+
+  # strong and em
+  # content = content.gsub(/<strong>\s*<\/strong>/,"").gsub(/<em>\s*<\/em>/,"")
+  content = content.gsub(/<\/?strong>/,"").gsub(/<\/?em>/,"")
 
   # list
-  content = content.gsub(/<\/?ul>/,"").gsub(/<li>/, "- ").gsub(/<\/li>/, "")
+  # content = content.gsub(/<\/?[uo]l>/,"").gsub(/<li>/, "- ").gsub(/<\/li>/, "")
+  # content = content.gsub(/<ol><\/ol>/,"")
 
   # pre code block
-  content = content.gsub(/<\/?pre>/,"")
+  content = content.gsub(/<pre>/,"~~~\n").gsub(/<\/pre>/,"\n~~~").gsub("~~~\n~~~", "~~~")
+
+  # figure
+  content = content.gsub('</div>',"")
+  .gsub('<span class="attachment__details">',"")
+  .gsub(/<span data-attr="size" class="attachment__size">.*<\/span>/, "")
+  .gsub('<div class="attachment__frame attachment__hideable">',"")
+  .gsub('<div class="inline_media_box">', "")
+  .gsub(/srcset="[^"]*"/, "")
+  .gsub('alt="Preview"', "")
+  .gsub(/<div class="inline_media_width_constraint"[^>]*>/,"")
+  .gsub(/<div class="inline_media_height_constraint"[^>]*>/,"")
+  .gsub('<figure class="attachment attachment--image png attachment--preview">',"<figure>")
 
   # special character
   content = content.gsub("&lt;", "<").gsub("&gt;",">").gsub("&amp;","&").gsub("  ","  ").gsub(" ","")
@@ -49,7 +70,7 @@ yml_url = "https://public.3.basecamp.com/p/hVaqyr6bG7mVMhX1Q4iLDtLp"
 page = Nokogiri::HTML(RestClient.get(yml_url))
 
 content = page.css(".formatted_content > div").to_s
-content = clean_formatted_content(content)
+content = clean_formatted_content(content).gsub("~~~","")
 
 # puts title
 # puts content

@@ -18,7 +18,7 @@ Detail documentation from MDN: [https://developer.mozilla.org/en/docs/Web/CSS/Ad
 
 Demo: 
 
-<p data-height="266" data-theme-id="dark" data-slug-hash="VadXwx" data-default-tab="html,result" data-user="makzan" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/makzan/pen/VadXwx/">Adjacent sibling selector demo</a> by Thomas Seng Hin Mak (<a href="http://codepen.io/makzan">@makzan</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<p data-height="266" data-theme-id="dark" data-slug-hash="VadXwx" data-default-tab="html,result" data-user="makzan" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
 ## General sibling selector
@@ -31,7 +31,7 @@ Detail documentation from MDN: [https://developer.mozilla.org/en/docs/Web/CSS/Ge
 
 Demo:
 
-<p data-height="266" data-theme-id="dark" data-slug-hash="eZKMYd" data-default-tab="html,result" data-user="makzan" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/makzan/pen/eZKMYd/">General sibling selector demo</a> by Thomas Seng Hin Mak (<a href="http://codepen.io/makzan">@makzan</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<p data-height="266" data-theme-id="dark" data-slug-hash="eZKMYd" data-default-tab="html,result" data-user="makzan" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
 

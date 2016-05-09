@@ -13,7 +13,7 @@ This is lecture 5 of Beginning jQuery course. In this lecture, we explore how to
 
 The jQuery’s learning center provides a solid tutorial on creating plugin:
 
-<a href="https://learn.jquery.com/plugins/basic-plugin-creation/">https://learn.jquery.com/plugins/basic-plugin-creation/</a>
+<a href="https://learn.jquery.com/plugins/basic-plugin-creation/</a>
 
 Here are the key points for a plugin:
 
@@ -53,7 +53,7 @@ We can accept options as an object instead of taking comma-separated parameters.
 
 We will use our slideshow code in our previous lab to demonstrate the plugin creation. The original code was in the following URL:
 
-<a href="http://codepen.io/makzan/pen/Pwyxbw">http://codepen.io/makzan/pen/Pwyxbw</a>
+<a href="http://codepen.io/makzan/pen/Pwyxbw</a>
 
 1) The first step would be putting all the existing jQuery slideshow code into a plugin scope.
 
@@ -99,14 +99,14 @@ We can now call our slideshow plugin with options.
 </pre>
 You may find the final code example in the following URL. It also includes ‘theme-a’ and ‘theme-b’ defined in the CSS style.
 
-<a href="http://codepen.io/makzan/pen/RPbzKz">http://codepen.io/makzan/pen/RPbzKz</a>
+<a href="http://codepen.io/makzan/pen/RPbzKz</a>
 
 
 ## jQuery UI plugin
 
 <img src="https://dl.dropboxusercontent.com/u/3079250/Public%20for%20Beginning%20jQuery/datepicker.png" alt="datepicker">
 
-<a href="http://jqueryui.com/">jQuery UI</a> provides a collection of common interactions and widgets that we need when building web application. It includes handy tools such as <a href="http://jqueryui.com/draggable/">dragging</a>, <a href="http://jqueryui.com/sortable/">sorting</a> and <a href="http://jqueryui.com/datepicker/">date picker</a>.
+<a href="http://jqueryui.com/datepicker/">date picker</a>.
 
 Here is a code demonstrating how we use sortable in real-world project. In this example code, which I extracted from my client project, the server-side renders a list of content and lets client-side re-ordering the list. The new order is then sent to server to save into database by using jQuery’s ajax post.
 
@@ -145,7 +145,7 @@ Please note that the code contains server-side script (Ruby) and it probably doe
 
 ## jQuery mobile plugin
 
-<a href="http://jquerymobile.com/">jQuery mobile</a> is a plugin that makes website act like a mobile app. It contain a large set of functions that mimics mobile application components and interactions by using jQuery and CSS styles. For example, it shows one page per view and comes with different <a href="http://makzan.net/mobile-web-app-dev-with-phonegap/transition/">page transition effects</a>.
+<a href="http://makzan.net/mobile-web-app-dev-with-phonegap/transition/">page transition effects</a>.
 
 I created a <a href="http://makzan.net/mobile-web-app-dev-with-phonegap/">course dedicated for using jQuery mobile to create mobile web application</a> which is free for online reading. If you need to to create mobile web application, this is a good starting point.
 

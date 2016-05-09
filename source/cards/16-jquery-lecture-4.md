@@ -43,44 +43,44 @@ icon: notes
 
 <p>Open Weather allows us to query weather detail of specify city.
 </p>
-<p><a href="http://openweathermap.org/api">http://openweathermap.org/api</a>
+<p><a href="http://openweathermap.org/api</a>
 </p>
 
 ### Open Exchange Rate
 
 <p>I have written an example of using the API of Open Exchange Rate in my course “Mobile web app development with PhoneGap”, which you can find it in the following URL.
 </p>
-<p><a href="http://makzan.net/mobile-web-app-dev-with-phonegap/exchange-rate-2-api/">http://makzan.net/mobile-web-app-dev-with-phonegap/exchange-rate-2-api/</a>
+<p><a href="http://makzan.net/mobile-web-app-dev-with-phonegap/exchange-rate-2-api/</a>
 </p>
 <p>I have created a test-only token which you can find in the following link. Please note that the token should be only used in this course and I will revoke the token later.
 </p>
-<p><a href="http://mak.la/exchange-rate-token">http://mak.la/exchange-rate-token</a>
+<p><a href="http://mak.la/exchange-rate-token</a>
 </p>
 
 ### Dribbble
 
-<p><a href="http://developer.dribbble.com/v1/">http://developer.dribbble.com/v1/</a>
+<p><a href="http://developer.dribbble.com/v1/</a>
 </p>
 <p>I have created a testing-only application which you may use to try fetching some dribbble shots into your jQuery project.
 </p>
-<p><a href="http://mak.la/dribbble-token">http://mak.la/dribbble-token</a>
+<p><a href="http://mak.la/dribbble-token</a>
 </p>
 <p>Note: This token should be exclusively used in this course only. I may revoke the token from time to time, please let me know if you face issue using the test-only token.
 </p>
 
 ### Facebook Graph API
 
-<p>The base of the API is <code>&lt;a href="https://graph.facebook.com"&gt;https://graph.facebook.com&lt;/a&gt;</code>.
+<p>The base of the API is <code>&lt;a href="https://graph.facebook.com&lt;/a&gt;</code>.
 </p>
 <ul>
 	<li>for page:</li>
 </ul>
-<p><a href="https://graph.facebook.com/makzan">https://graph.facebook.com/makzan</a>
+<p><a href="https://graph.facebook.com/makzan</a>
 </p>
 <ul>
 	<li>for user profile:</li>
 </ul>
-<p><a href="https://graph.facebook.com/maksenghin">https://graph.facebook.com/maksenghin</a>
+<p><a href="https://graph.facebook.com/maksenghin</a>
 </p>
 <p>The expression of Facebook Graph API is usually like the following:
 </p>
@@ -113,7 +113,7 @@ icon: notes
 
 <pre>$.getJSON(url, callback);
 </pre>
-<p><a href="http://api.jquery.com/jQuery.getJSON/">http://api.jquery.com/jQuery.getJSON/</a>
+<p><a href="http://api.jquery.com/jQuery.getJSON/</a>
 </p>
 <p>which is actually a short hand of:
 </p>
@@ -133,21 +133,21 @@ icon: notes
 	<li>post</li>
 	<li>load</li>
 </ul>
-<p><a href="http://api.jquery.com/category/ajax/shorthand-methods/">http://api.jquery.com/category/ajax/shorthand-methods/</a>
+<p><a href="http://api.jquery.com/category/ajax/shorthand-methods/</a>
 </p>
 
 ## jQuery.ajax
 
 <p>The <code>$.ajax</code> is the magic behind all these handy methods
 </p>
-<p><a href="http://api.jquery.com/jQuery.ajax/">http://api.jquery.com/jQuery.ajax/</a>
+<p><a href="http://api.jquery.com/jQuery.ajax/</a>
 </p>
 <p>Eventually jQuery.ajax uses the browser’s XMLHttpRequest method to trigger a request without refreshing the browser.
 </p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest">https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest</a>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest</a>
 </p>
 
-Please also note that new browser comes with a [Fetch API](https://developer.mozilla.org/en/docs/Web/API/Fetch_API), which Github has [a shim](https://github.com/github/fetch) for it. You can find [the Fetch example here](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch).
+Please also note that new browser comes with a [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch).
 
 ## JSON-P
 
@@ -159,7 +159,7 @@ Please also note that new browser comes with a [Fetch API](https://developer.moz
 </p>
 <p>But when querying data cross domain, we need to actually access data that’s not on the same domain. The method of JSON with padding solves this issue by making the server generated data calls a custom function in the client-side. The following site shows a detail explanation and example.
 </p>
-<p><a href="http://json-p.org/">http://json-p.org</a>
+<p><a href="http://json-p.org</a>
 </p>
 
 ## Inspecting the responses
@@ -170,7 +170,7 @@ Please also note that new browser comes with a [Fetch API](https://developer.moz
 </pre>
 <p>Usually we want to inspect the returned data before we know how to make use of the API.
 </p>
-<p>The console logging can show the returned data in browser’s console. There are also browser extensions that formats JSON responses. In Mac, I use <a href="http://www.helloresolven.com/portfolio/rested/">RESTed</a> app and <a href="https://luckymarmot.com/paw">Paw</a> app.
+<p>The console logging can show the returned data in browser’s console. There are also browser extensions that formats JSON responses. In Mac, I use <a href="https://luckymarmot.com/paw">Paw</a> app.
 </p>
 
 ## Manipulating DOM elements
@@ -179,9 +179,9 @@ Please also note that new browser comes with a [Fetch API](https://developer.moz
 </p>
 <p>If the request is a collection of resources, we usually use a loop to iterate each data object. On each object, we use the data to construct the HTML view.
 </p>
-<p>We make use of the handy jQuery methods to manipualte HTML DOM elements. For example, we can use <a href="http://api.jquery.com/clone/"><code>clone</code></a> to clone elements for a collection of items. We can use <a href="http://api.jquery.com/text/"><code>text</code></a> to change text content based on the fetch data and <code>prop</code> to change image sources for the img tag.
+<p>We make use of the handy jQuery methods to manipualte HTML DOM elements. For example, we can use <a href="http://api.jquery.com/text/"><code>text</code></a> to change text content based on the fetch data and <code>prop</code> to change image sources for the img tag.
 </p>
-<p>We may need <a href="http://api.jquery.com/empty/"><code>empty</code></a> or <a href="http://api.jquery.com/remove/"><code>remove</code></a> to clear existing elements on AJAX refresh. We may also need to use the <a href="http://api.jquery.com/append/"><code>append</code></a> and <a href="http://api.jquery.com/prepend/"><code>prepend</code></a> method to incrementally show more content to our readers.
+<p>We may need <a href="http://api.jquery.com/prepend/"><code>prepend</code></a> method to incrementally show more content to our readers.
 </p>
 
 ## Summary

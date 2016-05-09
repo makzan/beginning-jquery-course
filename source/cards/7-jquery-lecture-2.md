@@ -25,11 +25,11 @@ $("input#submit-button")
 </pre>
 The following demo page provides a collection of selector examples. You may toggle the selectors on the left and view the highlights of the selected elements on the right side.
 
-<a href="http://codylindley.com/jqueryselectors/">http://codylindley.com/jqueryselectors/</a>
+<a href="http://codylindley.com/jqueryselectors/</a>
 
 For the full selector list, you may check out the following jQuery documentation.
 
-<a href="http://api.jquery.com/category/selectors/">http://api.jquery.com/category/selectors/</a>
+<a href="http://api.jquery.com/category/selectors/</a>
 
 ## Showing and Hiding elements
 After we select the elements, we perform an action (or a series of actions) on the selection. These actions may be toggling visibility, manipulating elements or registering events handling.
@@ -56,7 +56,7 @@ We will cover the event handling in lecture 3.
 
 Here is a full demo on the email composing form’s toggling HTML and JavaScript:
 
-<a href="http://codepen.io/makzan/pen/jEvdXM">http://codepen.io/makzan/pen/jEvdXM</a>
+<a href="http://codepen.io/makzan/pen/jEvdXM</a>
 
 ## Example of selecting and changing text
 
@@ -76,14 +76,14 @@ $('.the-day').text("your " + day);
 </pre>
 You may find the code example here:
 
-<a href="http://codepen.io/makzan/pen/yyxwMp">http://codepen.io/makzan/pen/yyxwMp</a>
+<a href="http://codepen.io/makzan/pen/yyxwMp</a>
 
 ## JavaScript best practices
 
 When you’re writing more JavaScript, you should start learning to write the JavaScript in the right way. There are many essays and books discussing the best practices that we should follow. The following lists few of them that I highly recommend you to check them out.
 
 <ul>
-	<li>Thankful’s JavaScript Best Practice, <a href="http://www.thinkful.com/learn/javascript-best-practices-1/">part 1</a> and <a href="http://www.thinkful.com/learn/javascript-best-practices-2/">part 2</a>. </li>
+	<li>Thankful’s JavaScript Best Practice, <a href="http://www.thinkful.com/learn/javascript-best-practices-2/">part 2</a>. </li>
 	<li><a href="http://jstherightway.org/">JS the right way</a></li>
 	<li><a href="https://developer.yahoo.com/performance/rules.html">Yahoo! Performance Guide</a></li>
 </ul>
@@ -94,7 +94,7 @@ If you would like to read book for more details, I recommend the following books
 
 <em><a href="http://shop.oreilly.com/product/0636920012740.do">Head First jQuery</a></em> — The head first series contains lots of illustrations. This is definitely the jQuery for absolute beginner.
 
-<em><a href="http://javascriptbook.com/">JavaScript and jQuery books</a></em> — This book is good for beginner to learn JavaScript and jQuery. There are plenty of charts and illustrations in the book to help you understand the topics. You may want to read it’s companion book <em><a href="http://www.htmlandcssbook.com/">HTML and CSS book</a></em> too if you are new to HTML and CSS.
+<em><a href="http://www.htmlandcssbook.com/">HTML and CSS book</a></em> too if you are new to HTML and CSS.
 
 <em><a href="http://shop.oreilly.com/product/9780596517748.do">JavaScript: The Good Parts</a></em> — This is a must read book if you want to master the JavaScript language. This books shows you how JavaScript use prototype for object-oriented programming.
 

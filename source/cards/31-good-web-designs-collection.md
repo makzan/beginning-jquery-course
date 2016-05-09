@@ -11,35 +11,35 @@ This is a collection of good web designs I, or my students, found on the interne
 
 
 
-- http://www.awwwards.com
+<ul><li>http://www.awwwards.com</li></ul>
 
 
 ## Blog-styles
 
 
 
-- http://culturedcode.com/things/blog/
+<ul><li>http://culturedcode.com/things/blog/</li></ul>
 
 
 ## Doc / Help Site
 
 
 
-
-- http://support.culturedcode.com
-- https://basecamp.com/help/3
-
+<ul>
+<li>http://support.culturedcode.com</li>
+<li>https://basecamp.com/help/3</li>
+</ul>
 
 
 ## 404 Not Found
 
 
 
-- https://basecamp.com/aoeuaoeu
+<ul><li>https://basecamp.com/aoeuaoeu</li></ul>
 
 
 ## Wow Effects
 
 
 
-- http://visualgo.net
+<ul><li>http://visualgo.net</li></ul>

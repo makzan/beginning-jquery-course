@@ -7,7 +7,7 @@ icon: notes
 
 In this example, we will build a card-matching game.
 
-<p data-height="455" data-theme-id="dark" data-slug-hash="WwJGvX" data-default-tab="js,result" data-user="makzan" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/makzan/pen/WwJGvX/">Matching Game (Basic)</a> by Thomas Seng Hin Mak (<a href="http://codepen.io/makzan">@makzan</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<p data-height="455" data-theme-id="dark" data-slug-hash="WwJGvX" data-default-tab="js,result" data-user="makzan" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
 You can try to build using your solution. Then watch how I build the game in the following video.
@@ -18,5 +18,5 @@ Update:
 
 I have added another demo of the game:
 
-<p data-height="485" data-theme-id="dark" data-slug-hash="vGjexd" data-default-tab="js,result" data-user="makzan" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/makzan/pen/vGjexd/">Demo of Card Matching game</a> by Thomas Seng Hin Mak (<a href="http://codepen.io/makzan">@makzan</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<p data-height="485" data-theme-id="dark" data-slug-hash="vGjexd" data-default-tab="js,result" data-user="makzan" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>

@@ -108,7 +108,7 @@
   var handleChatWithThomas = function() {
     // chat with Thomas
     $('[href="#open-chat"]').click(function(){
-      if (user !== null) {
+      if (window.user !== null) {
         Intercom('show');
       } else {
         alert("Session expired. Please refresh.")

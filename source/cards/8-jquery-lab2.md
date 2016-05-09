@@ -19,7 +19,7 @@ icon: exercise
 <p>There are many situations that addClass and removeClass can make the code much simpler and elegant than changing the styles directly.
 </p>
 <h2>Example: Toggling error styles</h2>
-<p><a href="http://codepen.io/makzan/pen/azRQaP">http://codepen.io/makzan/pen/azRQaP</a>
+<p><a href="http://codepen.io/makzan/pen/azRQaP</a>
 </p>
 <p>This example shows how we can toggle visual styles by using the <code>addClass</code> and <code>removeClass</code> function.
 </p>
@@ -58,7 +58,7 @@ $('form input').keydown(function(){
   $('.error-message').hide();
 });
 </pre>
-<p>Demo: <a href="http://codepen.io/makzan/pen/OPBrym">http://codepen.io/makzan/pen/OPBrym</a>
+<p>Demo: <a href="http://codepen.io/makzan/pen/OPBrym</a>
 </p>
 <h3>Taking the code further</h3>
 <p>Can we check the form during the user is still inputting? We don’t need to wait until the form submission to indicate the error messages. Try to make the error messages respond instantly when user is inputting the form.
@@ -102,12 +102,12 @@ $('form input').keydown(function(){
 <ol>
 	<li>Try creating your own images sliding animation by only changing the CSS. Keep in mind that we avoid defining styles in JavaScript.</li>
 	<li>Try to add a next/previous slide switching feature. This can be done by listening to the click event of a next/previous button and changing the <code>currentIndex</code> variable to show next or previous slide.</li>
-	<li>Can we replace the image with HTML elements in each slide? Here is an example of having h2 and text in slide 1: <a href="http://codepen.io/makzan/pen/dPgQrb">http://codepen.io/makzan/pen/dPgQrb</a></li>
+	<li>Can we replace the image with HTML elements in each slide? Here is an example of having h2 and text in slide 1: <a href="http://codepen.io/makzan/pen/dPgQrb</a></li>
 </ol>
 <h3>More examples</h3>
 <p>Here is a lucky draw effect that I created using similar technique. I used it to randomly selected one student to answer question in my previous class.
 </p>
-<p><a href="http://codepen.io/makzan/pen/WbeXRq">http://codepen.io/makzan/pen/WbeXRq</a>
+<p><a href="http://codepen.io/makzan/pen/WbeXRq</a>
 </p>
 <hr>
 <p>Please <a href='#open-chat'>use chat</a> to send me your exercises. I’ll check them and reply you with suggestions. For any questions or queries, please also raise them. I’m here to help.

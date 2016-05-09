@@ -3,6 +3,7 @@
   <script>
     // header breadcrumb
     var currentCourse = localStorage["current-course"];
+    var currentTitle = "<%= current_page.data.title %>";
 
     if (currentCourse !== undefined) {
       var url = "/courses/" + currentCourse.replace(/\s/g,'-').toLowerCase() + ".html";
@@ -25,30 +26,6 @@
   </article>
 
 
-  <script>
-    var currentTitle = "<%= current_page.data.title %>";
-
-    if (currentCourse === undefined) {
-      $('aside.toc').hide();
-      $('.course-page').addClass('no-aside');
-      $('header').addClass('no-aside');
-    } else {
-      var jsonURL = "/courses/" + currentCourse.replace(/\s/g,'-').toLowerCase() + ".json";
-      $.getJSON(jsonURL, function(data){
-        $.each(data.links, function(){
-          var clone = $('.template li').clone();
-          clone.find('.card-icon').html(this.icon);
-          clone.find('a').attr('href', this.url).text(this.title);
-
-          if (this.title === currentTitle) {
-            clone.addClass('active');
-          }
-
-          $('#toc').append(clone);
-        });
-      });
-    }
-  </script>
 
 
   <script src='/javascripts/after-post.js'></script>
