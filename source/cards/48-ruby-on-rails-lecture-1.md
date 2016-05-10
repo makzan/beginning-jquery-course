@@ -24,6 +24,9 @@ In this lecture, we learn the most basic things about Ruby on Rails. Specificall
 </ul>
 
 
+Here is the video screencast for the lecture 1:
+
+<script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_jbyjl5el1t seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
 
 ## Lab 1—Getting familiar with Ruby on Rails environment
 
