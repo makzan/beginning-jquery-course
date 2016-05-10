@@ -104,41 +104,61 @@
 
 
   // current course, title and site-map
+  function createSideMapAndNext(data) {
+    var next = undefined;
+    var hasFoundCurrent = undefined;
+
+    $('#toc').empty();
+
+    $.each(data.links, function(){
+      var clone = $('.template li').clone();
+      clone.find('.card-icon').html(this.icon);
+      clone.find('a').attr('href', this.url).text(this.title);
+
+      // next
+      if (hasFoundCurrent && next===undefined) {
+        next = this;
+        // inject "next" link
+        var link = $("<a>");
+        link.text("Next → " + next.title);
+        link.attr('href', next.url);
+        $('#post').append(link);
+      }
+
+      // current
+      if (this.title === currentTitle) {
+        clone.addClass('active');
+        hasFoundCurrent = true;
+      }
+
+
+      $('#toc').append(clone);
+    });
+  }
+
   if (currentCourse === undefined) {
     $('aside.toc').hide();
     $('.course-page').addClass('no-aside');
     $('header').addClass('no-aside');
   } else {
+    // load cached copy
+    if (localStorage["saved-course-map:" + currentCourse] !== undefined) {
+      var data = localStorage["saved-course-map:" + currentCourse];
+      console.log("here Local");
+      createSideMapAndNext(JSON.parse(data));
+    }
+
+    // load network copy
     var jsonURL = "/courses/" + currentCourse.replace(/\s/g,'-').toLowerCase() + ".json";
     $.getJSON(jsonURL, function(data){
+      var isNew = (localStorage["saved-course-map:" + currentCourse] === undefined);
+      var isSame = !isNew && (JSON.stringify(data) === localStorage["saved-course-map:" + currentCourse] );
 
-      var next = undefined;
-      var hasFoundCurrent = undefined;
-
-      $.each(data.links, function(){
-        var clone = $('.template li').clone();
-        clone.find('.card-icon').html(this.icon);
-        clone.find('a').attr('href', this.url).text(this.title);
-
-        // next
-        if (hasFoundCurrent && next===undefined) {
-          next = this;
-          // inject "next" link
-          var link = $("<a>");
-          link.text("Next → " + next.title);
-          link.attr('href', next.url);
-          $('#post').append(link);
-        }
-
-        // current
-        if (this.title === currentTitle) {
-          clone.addClass('active');
-          hasFoundCurrent = true;
-        }
-
-
-        $('#toc').append(clone);
-      });
+      if (isNew || !isSame) {
+        localStorage["saved-course-map:" + currentCourse] = JSON.stringify(data);
+        console.log("here from network");
+        createSideMapAndNext(data);
+      }
     });
   }
 
