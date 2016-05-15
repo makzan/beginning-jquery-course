@@ -23,6 +23,7 @@ We make the theme by following step.
 
 
 We need the following steps:
+
 1. Hardcode 2 theme styles with CSS.
 2. Create a form with multiple radio buttons for theme choosing.
 3. Store the theme option in $_SESSION.
@@ -48,7 +49,7 @@ Here is the marking scheme to validate your works.
 ~~~
 | mark | description |
 | 15   | You have separated the code into model, view and controller. |
-| 5    | There is a view to choose theme styles. |  
+| 5    | There is a view to choose theme styles. |
 | 5    | Theme choosing is stored in $_SESSION. (You need to proof it) |
 | 5    | Theme applies after choosing theme and switching page. |
 | 5    | Themes table is created in database. |
