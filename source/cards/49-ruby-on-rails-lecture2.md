@@ -22,7 +22,7 @@ I have recorded the implementation of the post-comment example in the following 
 
 Note: There is no narration for the video at the moment.
 
-Commands for this example:
+The steps for this project example:
 
 First, we would like to generate the scaffold for `Comment`. We will heavily modify the generated code to fit into the post-comments association.
 
@@ -168,6 +168,21 @@ We want to display the comments when show a post. The `posts#show` is in charged
   </tbody>
 </table>
 ~~~
+
+
+## Further improvement
+
+p.s. Next improvement suggestions:
+
+
+
+<ol>
+<li>Display post title in posts/edit view. e.g. <h1>Editing {post title here}</h1></li>
+<li>Link the post title back to the post.</li>
+<li>Delete un-used views in comments folder.</li>
+<li>Improve the HTML code in view, and CSS files is assets folder, to create your personal blog style.</li>
+</ol>
+
 
 
 —Thomas
