@@ -20,7 +20,8 @@ Sometimes, we don’t know what gem to use, there are some indicators:
 <li>How is it compare to other gems with similar functionality?</li>
 </ol>
 
-<a href="http://life-log-md.s3.amazonaws.com/vva/133/original/53423900d34d788321885dc6b7e40c49412e56ec/Screen_Shot_2016-05-23_at_5.11.03_PM.png?1463994678" data-trix-attachment='{"contentType":"image/png","filename":"Screen Shot 2016-05-23 at 5.11.03 PM.png","filesize":535489,"height":1998,"href":"http://life-log-md.s3.amazonaws.com/vva/133/original/53423900d34d788321885dc6b7e40c49412e56ec/Screen_Shot_2016-05-23_at_5.11.03_PM.png?1463994678","url":"http://life-log-md.s3.amazonaws.com/vva/133/original/53423900d34d788321885dc6b7e40c49412e56ec/Screen_Shot_2016-05-23_at_5.11.03_PM.png?1463994678","width":2574}' data-trix-attributes='{"caption":"Ruby-toolbox"}'><figure class="attachment attachment--preview png"><img src="http://life-log-md.s3.amazonaws.com/vva/133/original/53423900d34d788321885dc6b7e40c49412e56ec/Screen_Shot_2016-05-23_at_5.11.03_PM.png?1463994678" width="2574" height="1998"><figcaption class="attachment__caption attachment__caption--edited">Ruby-toolbox</figcaption></figure></a>For gem comparison, we can use <a href="https://www.ruby-toolbox.com">Ruby Toolbox</a>. The ruby toolbox site groups different gems and compare their activities and popularity.
+
+For gem comparison, we can use <a href="https://www.ruby-toolbox.com">Ruby Toolbox</a>. The ruby toolbox site groups different gems and compare their activities and popularity.
 
 Here is the video that add the Devise gem for user authentication in the Link Redirection example.
 
