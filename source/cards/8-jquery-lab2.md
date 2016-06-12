@@ -19,7 +19,7 @@ icon: exercise
 <p>There are many situations that addClass and removeClass can make the code much simpler and elegant than changing the styles directly.
 </p>
 <h2>Example: Toggling error styles</h2>
-<p><a href="http://codepen.io/makzan/pen/azRQaP</a>
+<p><a href="<a target="_blank" rel="noreferrer" class="autolinked" data-behavior="truncate" href="http://codepen.io/makzan/pen/azRQaP">http://codepen.io/makzan/pen/azRQaP</a>"><a target="_blank" rel="noreferrer" class="autolinked" data-behavior="truncate" href="http://codepen.io/makzan/pen/azRQaP</a>">http://codepen.io/makzan/pen/azRQaP</a></a>
 </p>
 <p>This example shows how we can toggle visual styles by using the <code>addClass</code> and <code>removeClass</code> function.
 </p>
@@ -58,7 +58,7 @@ $('form input').keydown(function(){
   $('.error-message').hide();
 });
 </pre>
-<p>Demo: <a href="http://codepen.io/makzan/pen/OPBrym</a>
+<p>Demo: <a href="<a target="_blank" rel="noreferrer" class="autolinked" data-behavior="truncate" href="http://codepen.io/makzan/pen/OPBrym">http://codepen.io/makzan/pen/OPBrym</a>"><a target="_blank" rel="noreferrer" class="autolinked" data-behavior="truncate" href="http://codepen.io/makzan/pen/OPBrym</a>">http://codepen.io/makzan/pen/OPBrym</a></a>
 </p>
 <h3>Taking the code further</h3>
 <p>Can we check the form during the user is still inputting? We don’t need to wait until the form submission to indicate the error messages. Try to make the error messages respond instantly when user is inputting the form.
@@ -66,25 +66,25 @@ $('form input').keydown(function(){
 <p>Here are several events that might be helpful:
 </p>
 <ul>
-	<li><a href="http://api.jquery.com/click/">click</a></li>
-	<li><a href="http://api.jquery.com/keydown/">keydown</a></li>
-	<li><a href="http://api.jquery.com/keyup/">keyup</a></li>
-	<li><a href="http://api.jquery.com/change/">change</a></li>
-	<li><a href="http://api.jquery.com/focus/">focus</a></li>
-	<li><a href="http://api.jquery.com/blur/">blur</a></li>
+	<li><a href="<a target="_blank" rel="noreferrer" class="autolinked" data-behavior="truncate" href="http://api.jquery.com/click/">http://api.jquery.com/click/</a>">click</a></li>
+	<li><a href="<a target="_blank" rel="noreferrer" class="autolinked" data-behavior="truncate" href="http://api.jquery.com/keydown/">http://api.jquery.com/keydown/</a>">keydown</a></li>
+	<li><a href="<a target="_blank" rel="noreferrer" class="autolinked" data-behavior="truncate" href="http://api.jquery.com/keyup/">http://api.jquery.com/keyup/</a>">keyup</a></li>
+	<li><a href="<a target="_blank" rel="noreferrer" class="autolinked" data-behavior="truncate" href="http://api.jquery.com/change/">http://api.jquery.com/change/</a>">change</a></li>
+	<li><a href="<a target="_blank" rel="noreferrer" class="autolinked" data-behavior="truncate" href="http://api.jquery.com/focus/">http://api.jquery.com/focus/</a>">focus</a></li>
+	<li><a href="<a target="_blank" rel="noreferrer" class="autolinked" data-behavior="truncate" href="http://api.jquery.com/blur/">http://api.jquery.com/blur/</a>">blur</a></li>
 </ul>
 <h2>2. Lab—Building images slideshow</h2>
-<p><img src="http://cl.ly/image/390R06241j3U/Screen%20Shot%202015-03-13%20at%204.57.15%20PM.png" alt="Slideshow screenshot">
+<p><img src="<a target="_blank" rel="noreferrer" class="autolinked" data-behavior="truncate" href="http://cl.ly/image/390R06241j3U/Screen%20Shot%202015-03-13%20at%204.57.15%20PM.png">http://cl.ly/image/390R06241j3U/Screen%20Shot%202015-03-13%20at%204.57.15%20PM.png</a>" alt="Slideshow screenshot">
 </p>
 <p>The following steps show how we can build an image slideshow by using jQuery and CSS transition.
 </p>
 <ul>
-	<li><a href="http://codepen.io/makzan/pen/zxmMvR">Step 1: Images list in HTML</a></li>
-	<li><a href="http://codepen.io/makzan/pen/pvxQEP">Step 2: Basic CSS</a></li>
-	<li><a href="http://codepen.io/makzan/pen/RNeqGz">Step 3: Adding jQuery</a></li>
-	<li><a href="http://codepen.io/makzan/pen/Pwyxbw">Step 4: Animating with CSS</a></li>
-	<li><a href="http://codepen.io/makzan/pen/KwGrNW">Extra: Animating style 2</a></li>
-	<li><a href="http://codepen.io/makzan/pen/XJxxGa">Extra: Animating style 3</a></li>
+	<li><a href="<a target="_blank" rel="noreferrer" class="autolinked" data-behavior="truncate" href="http://codepen.io/makzan/pen/zxmMvR">http://codepen.io/makzan/pen/zxmMvR</a>">Step 1: Images list in HTML</a></li>
+	<li><a href="<a target="_blank" rel="noreferrer" class="autolinked" data-behavior="truncate" href="http://codepen.io/makzan/pen/pvxQEP">http://codepen.io/makzan/pen/pvxQEP</a>">Step 2: Basic CSS</a></li>
+	<li><a href="<a target="_blank" rel="noreferrer" class="autolinked" data-behavior="truncate" href="http://codepen.io/makzan/pen/RNeqGz">http://codepen.io/makzan/pen/RNeqGz</a>">Step 3: Adding jQuery</a></li>
+	<li><a href="<a target="_blank" rel="noreferrer" class="autolinked" data-behavior="truncate" href="http://codepen.io/makzan/pen/Pwyxbw">http://codepen.io/makzan/pen/Pwyxbw</a>">Step 4: Animating with CSS</a></li>
+	<li><a href="<a target="_blank" rel="noreferrer" class="autolinked" data-behavior="truncate" href="http://codepen.io/makzan/pen/KwGrNW">http://codepen.io/makzan/pen/KwGrNW</a>">Extra: Animating style 2</a></li>
+	<li><a href="<a target="_blank" rel="noreferrer" class="autolinked" data-behavior="truncate" href="http://codepen.io/makzan/pen/XJxxGa">http://codepen.io/makzan/pen/XJxxGa</a>">Extra: Animating style 3</a></li>
 </ul>
 <p>In step 1, we defined the images list in HTML. It shows that we are listing a collection of content by using the HTML list structure.
 </p>
@@ -102,19 +102,19 @@ $('form input').keydown(function(){
 <ol>
 	<li>Try creating your own images sliding animation by only changing the CSS. Keep in mind that we avoid defining styles in JavaScript.</li>
 	<li>Try to add a next/previous slide switching feature. This can be done by listening to the click event of a next/previous button and changing the <code>currentIndex</code> variable to show next or previous slide.</li>
-	<li>Can we replace the image with HTML elements in each slide? Here is an example of having h2 and text in slide 1: <a href="http://codepen.io/makzan/pen/dPgQrb</a></li>
+	<li>Can we replace the image with HTML elements in each slide? Here is an example of having h2 and text in slide 1: <a href="<a target="_blank" rel="noreferrer" class="autolinked" data-behavior="truncate" href="http://codepen.io/makzan/pen/dPgQrb">http://codepen.io/makzan/pen/dPgQrb</a>"><a target="_blank" rel="noreferrer" class="autolinked" data-behavior="truncate" href="http://codepen.io/makzan/pen/dPgQrb</a></li>">http://codepen.io/makzan/pen/dPgQrb</a></li></a>
 </ol>
 <h3>More examples</h3>
 <p>Here is a lucky draw effect that I created using similar technique. I used it to randomly selected one student to answer question in my previous class.
 </p>
-<p><a href="http://codepen.io/makzan/pen/WbeXRq</a>
+<p><a href="<a target="_blank" rel="noreferrer" class="autolinked" data-behavior="truncate" href="http://codepen.io/makzan/pen/WbeXRq">http://codepen.io/makzan/pen/WbeXRq</a>"><a target="_blank" rel="noreferrer" class="autolinked" data-behavior="truncate" href="http://codepen.io/makzan/pen/WbeXRq</a>">http://codepen.io/makzan/pen/WbeXRq</a></a>
 </p>
 <hr>
 <p>Please <a href='#open-chat'>use chat</a> to send me your exercises. I’ll check them and reply you with suggestions. For any questions or queries, please also raise them. I’m here to help.
 </p>
 <p>Thanks and Best Regards,
 </p>
-<p><img src="http://mak.la/signature" width="121" height="54" style="width: 121px; height: 54px;">
+<p><img src="<a target="_blank" rel="noreferrer" class="autolinked" data-behavior="truncate" href="http://mak.la/signature">http://mak.la/signature</a>" width="121" height="54" style="width: 121px; height: 54px;">
 </p>
 <p>Thomas Seng Hin Mak
 </p>
