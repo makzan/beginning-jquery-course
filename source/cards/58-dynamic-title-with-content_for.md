@@ -16,11 +16,11 @@ In the `views/layouts/application.html.erb` file:
 
 ~~~
 <title>
-  <%- if content_for? :page_title -%>
+  <% if content_for? :page_title %>
     <%= yield :page_title %> – Photo Gallery
-  <%- else -%>
+  <% else %>
     Photo Gallery
-  <%- end -%>
+  <% end %>
 </title>
 ~~~
 
@@ -42,9 +42,9 @@ In the `application.html.erb` layout file
 <!DOCTYPE html>
 <html>
 <head>
-  <%- if content_for? :special_css_files -%>
+  <% if content_for? :special_css_files %>
     <%= yield :special_css_files %>
-  <%- end -%>
+  <% end %>
 </head>
 <body>
 
