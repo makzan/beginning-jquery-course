@@ -22,7 +22,7 @@ Git is a source code management tool-chain with version control. It is created b
 
 Finish the Github “[Try Git](http://try.github.io/)” course.
 
-1. Open http://try.github.io in your browser.
+1. Open [http://try.github.io](http://try.github.io) in your browser.
 2. Type the command from the grey box into shell prompt.
 3. Check the files finder for the current working files.
 
